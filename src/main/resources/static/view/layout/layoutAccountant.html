@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	
+    
+</head>
+
+<body>
+
+<div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style="width:auto;background-color:rgb(42,63,84);" id="mySidebar" ng-init="init()">
+  <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
+  <!-- sidebar menu -->
+            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu" style="width:234px;">
+            <div class="navbar nav_title" style="border: 0;">
+              <a href="#" class="site_title"><img src="./image/logoW.png" class="center" style="width:90%;"></a>
+            </div>
+
+            <div class="clearfix"></div>
+             <!-- menu profile quick info -->
+            <div class="profile clearfix">
+              <div class="profile_pic">
+                <img src="./image/user.jpg" alt="..." class="img-circle profile_img">
+              </div>
+              <div class="profile_info">
+                <span>Welcome,</span>
+                <h2>{{user.fname}}</h2>
+              </div>
+            </div>
+            <!-- /menu profile quick info -->
+              <div class="menu_section">
+                <h3></h3>
+                <ul class="nav side-menu">
+                  <li ><a><i class="fa fa-home"></i>Home<span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="" onclick="w3_close()" ui-sref="admin.dashboard">Dashboard</a></li>
+                    </ul>
+                  </li>
+                  <li ><a><i class="fa fa-file"></i> Contract <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="#" onclick="w3_close()" ui-sref="admin.contractcreate">Create Contract</a></li>
+                      <li><a href="#" onclick="w3_close()" ui-sref="admin.contract">Contract</a></li>
+                       <li><a href="#" onclick="w3_close()" ui-sref="admin.payinstallment">Contract</a></li>
+                    </ul>
+                  </li>
+                  <li ><a><i class="fa fa-database"></i> Stock <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="#" onclick="w3_close()" ui-sref="admin.motorcycleimport">Import</a></li>
+                      <li><a href="#" onclick="w3_close()" ui-sref="admin.motorcycle">Motorcycle</a></li>
+                      <li><a href="#" onclick="w3_close()" ui-sref="admin.motorcyclechangeregistration">Change Registration Number</a></li>
+                      <li><a href="#" onclick="w3_close()" ui-sref="admin.motorcyclechangechassis">Change Chassis Number</a></li>
+                      <li><a href="#" onclick="w3_close()" ui-sref="admin.motorcyclechangeengine">Change Engine Number</a></li>
+                      <li><a href="#" onclick="w3_close()" ui-sref="admin.motorcyclechangecolor">Change Color</a></li>
+                    </ul>
+                  </li>
+                  <li ><a><i class="fa fa-user"></i> Customer <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="#" onclick="w3_close()" ui-sref="admin.customercreate">Create Customer</a></li>
+                      <li><a href="#" onclick="w3_close()" ui-sref="admin.customer">Customer</a></li>
+                      <li><a href="#" onclick="w3_close()" ui-sref="admin.customerchangetelephone">Change Telephone Number</a></li>
+                      <li><a href="#" onclick="w3_close()" ui-sref="admin.customerchangeaddress">Change Address</a></li>
+                      <li><a href="#" onclick="w3_close()" ui-sref="admin.customerchangename">Change Name</a></li>
+                    </ul>
+                  </li>
+             
+<!--                   <li><a><i class="fa fa-wrench"></i> Service <span class="fa fa-chevron-down"></span></a> -->
+<!--                     <ul class="nav child_menu"> -->
+<!--                       <li><a href="#">Registration Book</a></li> -->
+<!--                       <li><a href="#">inspection</a></li> -->
+<!--                       <li><a href="#">Insurance</a></li> -->
+<!--                     </ul> -->
+<!--                   </li> -->
+				  <li ><a><i class="fa fa-database"></i> Employee <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="#" onclick="w3_close()" ui-sref="admin.employeecreate">Create Employee</a></li>
+                      <li><a href="#" onclick="w3_close()" ui-sref="admin.employee">Employee</a></li>
+                    </ul>
+                  </li>
+                  <li ><a href="#" onclick="w3_close()" ui-sref="admin.tracking"><i class="fa fa-map-marker"></i> Tracking </a>
+                  
+                  </li>
+                  <li ><a><i class="fa fa-cog"></i> Config <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="#" onclick="w3_close()" ui-sref="admin.location">Location</a></li>
+                      <li><a href="#" onclick="w3_close()" ui-sref="admin.brand">Brand</a></li>
+                      <li><a href="#" onclick="w3_close()" ui-sref="admin.color">Color</a></li>
+                      <li><a href="#" onclick="w3_close()" ui-sref="admin.nameTitle">Name Title</a></li>
+                    </ul>
+                  </li>
+                  </ul></div>
+
+            </div>
+            <!-- /sidebar menu -->
+</div>
+
+<div class="w3-main" style="margin-left:234px;width:auto;background-color:rgb(247,247,247);">
+<div class="w3-white">
+
+		<!-- top navigation -->
+        <div class="top_nav">
+          <div class="nav_menu">
+            <nav>
+              <div class="nav toggle">
+                <button class="w3-button w3-rgb(237,237,237) w3-xlarge w3-hide-large" onclick="w3_open()" style="color:rgb(95,115,140)!important;background-color:rgb(237,237,237);"><i class="fa fa-bars"></i></button>
+              </div>
+
+              <ul class="nav navbar-nav navbar-right">
+                <li class="">
+                  <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    <img src="./image/user.jpg" alt="">{{user.fname}}  {{user.lname}}
+                    <span class=" fa fa-angle-down"></span>
+                  </a>
+                  <ul class="dropdown-menu dropdown-usermenu pull-right">
+                    <li><a href="javascript:;"> Profile</a></li>
+                    <li>
+                      <a href="javascript:;">
+                        <span class="badge bg-red pull-right">50%</span>
+                        <span>Settings</span>
+                      </a>
+                    </li>
+                    <li><a href="javascript:;">Help</a></li>
+                    <li><a href="#" ng-click="logout()"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                  </ul>
+                </li>
+
+                <li role="presentation" class="dropdown">
+                  <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+                    <i class="fa fa-envelope-o"></i>
+                    <span class="badge bg-green">6</span>
+                  </a>
+                  <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
+                    <li>
+                      <a>
+                        <span class="image"><img src="./image/user.jpg" alt="Profile Image" /></span>
+                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a>
+                        <span class="image"><img src="./image/user.jpg" alt="Profile Image" /></span>
+                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a>
+                        <span class="image"><img src="./image/user.jpg" alt="Profile Image" /></span>
+                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a>
+                        <span class="image"><img src="./image/user.jpg" alt="Profile Image" /></span>
+                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <div class="text-center">
+                        <a>
+                          <strong>See All Alerts</strong>
+                          <i class="fa fa-angle-right"></i>
+                        </a>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <!-- /top navigation -->
+
+	
+</div>
+    <div class="w3-container" style="width:auto;height:auto;">
+    <div class="main-content {{$state.current.data.contentClasses}}" data-ui-view style="width:100%;"></div>
+  </div>
+ 
+</div>
+
+ <!-- footer content -->
+        <footer>
+          <div class="pull-right">
+            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+          </div>
+          <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+
+<script>
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+</script>
+ 
+<!-- Custom Theme Scripts -->
+    <script src="./style/admin/build/js/custom.min.js"></script>     
+    <!-- Custom Theme Style -->
+    <link href="./style/admin/build/css/custom.min.css" rel="stylesheet">
+</body>
+</html>
+
+
+
+
+
+
+

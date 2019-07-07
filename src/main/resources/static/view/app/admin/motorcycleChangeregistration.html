@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	  
+
+    
+    
+    
+  </head>
+
+  <body class="nav-md">
+    <div class="container body" ng-init="init()">
+      <div class="main_container">
+        
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+          <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h3>Change Registration Number</h3>
+              </div>
+            </div>
+            <div class="clearfix"></div>       
+
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <form class="form-horizontal form-label-left input_mask">
+                       	
+	                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+		                        <div class="form-group">
+			                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Regist Number</label>
+			                        <div class="col-md-8 col-sm-8 col-xs-12">
+			                          <input type="text" class="form-control" placeholder="Registration Number" ng-model="registrationNumber" ng-show="beforeSearch">
+			                          <input type="text" class="form-control" disabled="disabled" ng-model="registNumber" ng-hide="beforeSearch">
+			                        </div>
+		                      	</div>
+		                      </div>
+		                      
+		                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+								<div class="form-group">
+			                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Regist Province</label>
+			                        <div class="col-md-8 col-sm-8 col-xs-12">
+			                          <select ng-options="province as province.name for province in provinces" ng-model="registrationProvince"  id="heard" class="form-control" ng-show="beforeSearch"></select>
+			                          <input type="text" class="form-control" disabled="disabled" ng-model="registProvince" ng-hide="beforeSearch">
+			                        </div>
+			                        <a class="control-label fa fa-search col-md-1 col-sm-1 col-xs-12" href="" ng-click="getMotorcycleByRegistNumber()" ng-show="beforeSearch"></a>
+		                      	</div>
+		                      </div>
+		                      
+		                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+								<div class="form-group">
+			                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Chassis Number</label>
+			                        <div class="col-md-8 col-sm-8 col-xs-12">
+			                          <input type="text" class="form-control"  placeholder="Chassis Number" ng-model="chassisNumber" ng-show="beforeSearch">
+			                          <input type="text" class="form-control" disabled="disabled" ng-model="chassisNumber" ng-hide="beforeSearch">
+			                        </div>
+			                        <a class="control-label fa fa-search col-md-1 col-sm-1 col-xs-12" href="" ng-click="getMotorcycleByChassisNumber()" ng-show="beforeSearch"></a>
+		                      	</div>
+		                      </div>
+		                      
+		                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+								<div class="form-group">
+			                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Engine Number</label>
+			                        <div class="col-md-8 col-sm-8 col-xs-12">
+			                          <input type="text" class="form-control"  placeholder="Engine Number" ng-model="engineNumber" ng-show="beforeSearch">
+			                          <input type="text" class="form-control" disabled="disabled" ng-model="engineNumber" ng-hide="beforeSearch">
+			                        </div>
+			                        <a class="control-label fa fa-search col-md-1 col-sm-1 col-xs-12" href="" ng-click="getMotorcycleByEngineNumber()" ng-show="beforeSearch"></a>
+		                      	</div>
+		                      </div>
+		                      
+		                      <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
+								<div class="form-group">
+			                        <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+		                      	</div>
+		                      </div>
+		                      
+		                      <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
+								<div class="form-group">
+			                        <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+		                      	</div>
+		                      </div>
+		                      
+		                      <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
+								<div class="form-group">
+			                        <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+		                      	</div>
+		                      </div>
+		                      
+		                      <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
+								<div class="form-group">
+			                        <label class="control-label col-md-3 col-sm-3 col-xs-12"></label>
+		                      	</div>
+		                      </div>
+		                      
+		                      <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback" ng-hide="beforeSearch">
+		                        <div class="form-group">
+			                        <label class="control-label col-md-2 col-sm-2 col-xs-12">Old Regist Number</label>
+			                        <div class="col-md-8 col-sm-8 col-xs-12">
+			                          <input type="text" class="form-control" disabled="disabled"  ng-model="registrationNumber" >
+			                        </div>
+		                      	</div>
+		                      </div>
+		                      
+		                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback" ng-hide="beforeSearch">
+		                        <div class="form-group">
+			                        <label class="control-label col-md-3 col-sm-3 col-xs-12">New Regist Number</label>
+			                        <div class="col-md-8 col-sm-8 col-xs-12">
+			                          <input type="text" class="form-control" placeholder="Registration Number" ng-model="motorcycle.registrationNumber" >
+			                        </div>
+		                      	</div>
+		                      </div>
+		                      
+		                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback" ng-hide="beforeSearch">
+								<div class="form-group">
+			                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Regist Province</label>
+			                        <div class="col-md-8 col-sm-8 col-xs-12">
+			                          <select ng-options="province as province.name for province in provinces" ng-model="motorcycle.registrationProvince" class="form-control" ></select>
+			                        </div>
+		                      	</div>
+		                      </div>
+		                      
+		                      
+	               	</form>
+	               	
+	               	<div class="actionBar" ng-hide="beforeSearch">
+						<div class="msgBox">
+							<div class="content">
+								<a href="" class="buttonFinish  btn btn-success" ng-click="updateRegistration()">Finish</a>	
+							</div>
+						</div>
+					</div>
+                      
+                    
+
+	            </div>
+	          </div>
+	        </div>
+        <!-- /page content -->
+      	</div>
+      </div>
+	 </div>
+	</div>
+    
+    
+    
+    
+    
+   
+	
+  </body>
+</html>

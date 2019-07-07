@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"  ng-app="app">
+
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+	
+     <title>KAMONKIT </title>
+
+
+	<!-- Bootstrap -->
+    <link href="./style/admin/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="./style/admin/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="./style/admin/vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- bootstrap-daterangepicker -->
+    <link href="./style/admin/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+    <!-- bootstrap-datetimepicker -->
+    <link href="./style/admin/vendors/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css" rel="stylesheet">
+	<!-- Animate.css -->
+    <link href="./style/admin/vendors/animate.css/animate.min.css" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="./style/admin/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+    <!-- bootstrap-wysiwyg -->
+    <link href="./style/admin/vendors/google-code-prettify/bin/prettify.min.css" rel="stylesheet">
+    <!-- Select2 -->
+    <link href="./style/admin/vendors/select2/dist/css/select2.min.css" rel="stylesheet">
+    <!-- Switchery -->
+    <link href="./style/admin/vendors/switchery/dist/switchery.min.css" rel="stylesheet">
+    <!-- starrr -->
+    <link href="./style/admin/vendors/starrr/dist/starrr.css" rel="stylesheet">
+    <!-- PNotify -->
+    <link href="./style/admin/vendors/pnotify/dist/pnotify.css" rel="stylesheet">
+	<!--     table -->
+    <link rel="stylesheet" type="text/css" href="./style/table/util.css">
+	<link rel="stylesheet" type="text/css" href="./style/table/main.css">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+	
+	
+	<!-- bower -->
+	
+	<script src="./bower/jquery/dist/jquery.js?vxvision=9"></script>
+	<script src="./bower/angular/angular.js?vxvision=9"></script>
+	<script src="./bower/angular-ui-router/release/angular-ui-router.js"></script>
+	<script src="./bower/oclazyload/dist/ocLazyLoad.js"></script>
+	<script src="./bower/ngstorage/ngStorage.js"></script>
+	<script src="./bower/angular-animate/angular-animate.js"></script>
+	<script src="./bower/angular-sanitize/angular-sanitize.js"></script>
+	<script src="./bower/fastclick/lib/fastclick.js"></script>
+	<script src="./bower/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+	
+	<!-- AngularFire -->
+	<script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+	
+	
+	<!-- Initialize the Firebase SDK -->
+	<script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
+	<script>
+	  // Initialize Firebase
+	  var config = {
+	    apiKey: "AIzaSyCbwbjmGzCl9czBXjP0JfijwXXg2DoEADI",
+	    authDomain: "kamonkit-motorcycle.firebaseapp.com",
+	    databaseURL: "https://kamonkit-motorcycle.firebaseio.com",
+	    projectId: "kamonkit-motorcycle",
+	    storageBucket: "kamonkit-motorcycle.appspot.com",
+	    messagingSenderId: "402503141536"
+	  };
+	  firebase.initializeApp(config);
+	</script>
+	
+	 <!-- Controller -->
+	<script src="./script/app.js?vxvision=9"></script>
+	<script src="./script/app.main.js?vxvision=9"></script>
+	<script src="./script/config.route.js"></script>
+	<script src="./script/controller/loginCtrl.js"></script>
+	
+    <script src="./script/controller/dashboardCtrl.js"></script>
+    <script src="./script/controller/contractCtrl.js"></script>
+    <script src="./script/controller/payinstallmentCtrl.js"></script>
+    <script src="./script/controller/contractcreateCtrl.js"></script>
+    <script src="./script/controller/customerCtrl.js"></script>
+    <script src="./script/controller/customernameCtrl.js"></script>
+    <script src="./script/controller/customertelephoneCtrl.js"></script>
+    <script src="./script/controller/customeraddressCtrl.js"></script>
+    <script src="./script/controller/customercreateCtrl.js"></script>
+    <script src="./script/controller/employeeCtrl.js"></script>
+    <script src="./script/controller/motorCtrl.js"></script>
+    <script src="./script/controller/motorregistrationCtrl.js"></script>
+    <script src="./script/controller/motorcolorCtrl.js"></script>
+    <script src="./script/controller/motorchassisCtrl.js"></script>
+    <script src="./script/controller/motorengineCtrl.js"></script>
+    <script src="./script/controller/motorimportCtrl.js"></script>
+    <script src="./script/controller/employeecreateCtrl.js"></script>
+    
+    <script src="./script/controller/parameter/locationCtrl.js"></script>
+    <script src="./script/controller/parameter/brandCtrl.js"></script>
+    <script src="./script/controller/parameter/colorCtrl.js"></script>
+    <script src="./script/controller/parameter/nameTitleCtrl.js"></script>
+	
+	
+	
+	<title>KAMONKIT</title>
+</head>
+
+
+
+<body >
+
+
+
+
+<div ui-view ></div>
+
+
+
+       		 
+       		 
+
+
+
+	<!-- jQuery -->
+    <script src="./style/admin/vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="./style/admin/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="./style/admin/vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="./style/admin/vendors/nprogress/nprogress.js"></script>
+    <!-- Chart.js -->
+    <script src="./style/admin/vendors/Chart.js/dist/Chart.min.js"></script>
+    <!-- jQuery Sparklines -->
+    <script src="./style/admin/vendors/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+    <!-- Flot -->
+    <script src="./style/admin/vendors/Flot/jquery.flot.js"></script>
+    <script src="./style/admin/vendors/Flot/jquery.flot.pie.js"></script>
+    <script src="./style/admin/vendors/Flot/jquery.flot.time.js"></script>
+    <script src="./style/admin/vendors/Flot/jquery.flot.stack.js"></script>
+    <script src="./style/admin/vendors/Flot/jquery.flot.resize.js"></script>
+    <!-- Flot plugins -->
+    <script src="./style/admin/vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
+    <script src="./style/admin/vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
+    <script src="./style/admin/vendors/flot.curvedlines/curvedLines.js"></script>
+    <!-- DateJS -->
+    <script src="./style/admin/vendors/DateJS/build/date.js"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="./style/admin/vendors/moment/min/moment.min.js"></script>
+    <script src="./style/admin/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <!-- bootstrap-datetimepicker -->    
+    <script src="./style/admin/vendors/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="./style/admin/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+<!--     iCheck -->
+    <script src="./style/admin/vendors/iCheck/icheck.min.js"></script>
+<!--     bootstrap-wysiwyg -->
+    <script src="./style/admin/vendors/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js"></script>
+    <script src="./style/admin/vendors/jquery.hotkeys/jquery.hotkeys.js"></script>
+    <script src="./style/admin/vendors/google-code-prettify/src/prettify.js"></script>
+<!--     jQuery Tags Input -->
+    <script src="./style/admin/vendors/jquery.tagsinput/src/jquery.tagsinput.js"></script>
+<!--     Switchery -->
+    <script src="./style/admin/vendors/switchery/dist/switchery.min.js"></script>
+<!--     Select2 -->
+    <script src="./style/admin/vendors/select2/dist/js/select2.full.min.js"></script>
+<!--     Parsley -->
+<!--     <script src="./style/admin/vendors/parsleyjs/dist/parsley.min.js"></script> -->
+<!--     Autosize -->
+    <script src="./style/admin/vendors/autosize/dist/autosize.min.js"></script>
+<!--     jQuery autocomplete -->
+    <script src="./style/admin/vendors/devbridge-autocomplete/dist/jquery.autocomplete.min.js"></script>
+<!--     starrr -->
+    <script src="./style/admin/vendors/starrr/dist/starrr.js"></script>
+<!-- PNotify -->
+    <script src="./style/admin/vendors/pnotify/dist/pnotify.js"></script>
+    
+    
+  <!-- Custom Theme Style -->
+    <link href="./style/admin/build/css/custom.min.css" rel="stylesheet">
+    <!-- Custom Theme Scripts -->
+    <script src="./style/admin/build/js/custom.min.js"></script>  
+    
+    
+    
+</body>
+
+</html>
+
+
+
+
+
+
+

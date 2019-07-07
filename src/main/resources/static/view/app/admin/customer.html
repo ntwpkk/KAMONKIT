@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	  
+
+    
+    
+    
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+          <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h3>Find Customer</h3>
+              </div>
+            </div>
+            <div class="clearfix"></div>       
+
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  
+                  
+                  <form class="form-horizontal form-label-left">
+
+						 <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
+						   <div class="form-group">
+	                            <label class="control-label col-md-1 col-sm-1 col-xs-12" for="first-name">Citizen ID
+	                            </label>
+	                            <div class="col-md-10 col-sm-10 col-xs-12">
+	                              <input type="text" required="required" class="form-control" placeholder="Citizen ID" ng-model="citizenId" ng-show="beforeSearch">
+	                              <input type="text" required="required" class="form-control" disabled="disabled" ng-model="customer.citizenId" ng-hide="beforeSearch">
+	                            </div>
+	                            <a class="control-label fa fa-user col-md-1 col-sm-1 col-xs-12" href="" ng-click="getCustomerByCitizenId(citizenId)" ng-show="beforeSearch"></a>
+	                        </div>
+	                      </div>
+	                      
+	                      
+	                      <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback" ng-hide="beforeSearch">
+	                        <div class="form-group">
+		                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Name Title</label>
+		                        <div class="col-md-9 col-sm-9 col-xs-12">
+			                          <input type="text" class="form-control" disabled="disabled" ng-model="customer.nameTitle.name">
+		                        </div>
+		                    </div>
+	                      </div>
+	                      
+	                      
+		                  <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
+	                        <div class="form-group">
+	                            <label class="control-label col-md-2 col-sm-2 col-xs-12" for="first-name">First Name 
+	                            </label>
+	                            <div class="col-md-10 col-sm-10 col-xs-12">
+	                              <input type="text" required="required" class="form-control col-md-7 col-xs-12" placeholder="First Name" ng-model="fname" ng-show="beforeSearch">
+	                              <input type="text" disabled="disabled" class="form-control col-md-7 col-xs-12" ng-model="customer.fname" ng-hide="beforeSearch">
+	                            </div>
+	                          </div>
+	                      </div>
+		                   
+		                  <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
+	                        <div class="form-group">
+	                            <label class="control-label col-md-2 col-sm-2 col-xs-12" for="first-name">Last Name
+	                            </label>
+	                            <div class="col-md-9 col-sm-9 col-xs-12">
+	                              <input type="text"  required="required" class="form-control col-md-7 col-xs-12" placeholder="Last Name" ng-model="lname"  ng-show="beforeSearch">
+	                              <input type="text"  disabled="disabled" class="form-control col-md-7 col-xs-12"  ng-model="customer.lname" ng-hide="beforeSearch">
+	                            </div>
+	                            <a class="control-label fa fa-search col-md-1 col-sm-1 col-xs-12" href="" ng-click="getCustomerByname(fname,lname)" ng-show="beforeSearch"></a>
+	                          </div>
+	                      </div>
+	                      
+	                     
+	                      
+	                      
+	                      
+		               
+                          
+                          <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+	                        <div class="form-group">
+	                            <label class="control-label col-md-4 col-sm-4 col-xs-12">Date Of Birth 
+	                            </label>
+	                            <div class="col-md-8 col-sm-8 col-xs-12">
+	                              <input  class="date-picker form-control col-md-12 col-xs-12" disabled="disabled" type="text"  ng-model="customer.birthday">
+	                            </div>
+	                        </div>
+	                      </div>
+	                      
+	                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+	                        <div class="form-group">
+	                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="first-name">Telephone
+	                            </label>
+	                            <div class="col-md-8 col-sm-8 col-xs-12">
+	                              <input type="text"  required="required" class="form-control col-md-7 col-xs-12" disabled="disabled" ng-model="customer.telephone">
+	                            </div>
+	                          </div>
+	                      </div>
+	                      
+	                      <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
+		                      <div class="form-group">
+		                            <label class="control-label col-md-1 col-sm-1 col-xs-12" for="first-name">Address
+		                            </label>
+		                            <div class="col-md-11 col-sm-11 col-xs-12">
+		                              <input type="text" required="required" class="form-control col-md-7 col-xs-12" disabled="disabled" ng-model="customer.address.detail">
+		                            </div>
+	                          </div>
+	                      </div>
+	                      
+	                      
+	                      <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
+		                      <div class="form-group">
+		                            <label class="control-label col-md-1 col-sm-1 col-xs-12" for="first-name">Workplace
+		                            </label>
+		                            <div class="col-md-11 col-sm-11 col-xs-12">
+		                              <input type="text" required="required" class="form-control col-md-7 col-xs-12" disabled="disabled" ng-model="customer.workplace.detail">
+		                            </div>
+	                          </div>
+	                      </div>
+	                      
+	                      
+	                      
+	                      </form>
+                  
+					<div class="container-table" style="background:rgb(237,237,237);"  style="overflow:visible;">
+						<div class="wrap-table"  style="overflow:visible;">
+							<div class="table100"  style="overflow:visible;">
+								<table  style="overflow:visible;">
+									<thead>
+										<tr class="table100-head">
+											<th class="column1">Number</th>
+											<th class="column2">Contract Status</th>
+											<th class="column3">Code</th>
+											<th class="column4">Motorcycle</th>
+											<th class="column5">Customer Status</th>
+										</tr>
+									</thead>
+									<tbody style="overflow:visible;">
+											<tr ng-repeat="c in customer.contract | orderBy:'status' ">
+											
+												<td class="column1">{{$index+1}}</td>
+												<td class="column2">{{c.status}}</td>
+												<td class="column3">{{c.code}}</td>
+												<td class="column4">{{c.motorcycle.registrationNumber}}</td>
+												<td class="column5">{{c.customerStatus}}</td>
+												
+											</tr>
+											
+											
+											
+											
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+	            </div>
+	          </div>
+	        </div>
+        <!-- /page content -->
+      	</div>
+      </div>
+	 </div>
+	</div>
+    
+    
+    
+    
+    
+    <!-- Modal  Insert-->
+	<div class="modal fade bd-example-modal-lg" id="ModalUpdate" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content" >
+				<div class="modal-header">
+					<h3>Update Customer</h3>
+					<span class="close" data-dismiss="modal">x</span>
+
+
+				</div>
+				<div class="modal-body" >
+					<form class="form-horizontal form-label-left">
+
+						  <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
+	                        <div class="form-group">
+	                            <label class="control-label col-md-1 col-sm-1 col-xs-12" for="first-name">Citizen ID
+	                            </label>
+	                            <div class="col-md-10 col-sm-10 col-xs-12">
+	                              <input type="text" required="required" class="form-control col-md-7 col-xs-12" placeholder="Citizen ID" ng-model="contract.customer.citizenId">
+	                            </div>
+	                        </div>
+	                      </div>
+	                      
+	                      <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
+	                        <div class="form-group">
+		                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Name Title</label>
+		                        <div class="col-md-9 col-sm-9 col-xs-12">
+<!-- 			                          <input type="text" class="form-control" placeholder="Number"> -->
+									  <select ng-options="nameTitle as nameTitle.name for nameTitle in nameTitles" ng-model="contract.customer.nameTitle.name"  id="heard" class="form-control" ng-model="contract.customer.nameTitle"></select>
+		                        </div>
+		                    </div>
+	                      </div>
+	                      
+		                  <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
+	                        <div class="form-group">
+	                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="first-name">First Name 
+	                            </label>
+	                            <div class="col-md-8 col-sm-8 col-xs-12">
+	                              <input type="text" required="required" class="form-control col-md-7 col-xs-12" placeholder="First Name" ng-model="contract.customer.fname">
+	                            </div>
+	                          </div>
+	                      </div>
+		                   
+		                  <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
+	                        <div class="form-group">
+	                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="first-name">Last Name
+	                            </label>
+	                            <div class="col-md-8 col-sm-8 col-xs-12">
+	                              <input type="text"  required="required" class="form-control col-md-7 col-xs-12" placeholder="Last Name" ng-model="contract.customer.lname">
+	                            </div>
+	                          </div>
+	                      </div>
+                          
+                          <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
+	                        <div class="form-group">
+	                            <label class="control-label col-md-4 col-sm-4 col-xs-12">Date Of Birth 
+	                            </label>
+	                            <div class="col-md-7 col-sm-7 col-xs-12">
+	                              <input  class="date-picker form-control col-md-12 col-xs-12" required="required" type="date" style="padding-right:0;" ng-model="contract.customer.birthday">
+	                            </div>
+	                        </div>
+	                      </div>
+	                      
+	                      <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
+	                        <div class="form-group">
+	                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Telephone
+	                            </label>
+	                            <div class="col-md-9 col-sm-9 col-xs-12">
+	                              <input type="text"  required="required" class="form-control col-md-7 col-xs-12" placeholder="Telephone" ng-model="contract.customer.telephone">
+	                            </div>
+	                          </div>
+	                      </div>
+	                      
+	                      <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
+		                      <div class="form-group">
+		                            <label class="control-label col-md-1 col-sm-1 col-xs-12" for="first-name">Address
+		                            </label>
+		                            <div class="col-md-11 col-sm-11 col-xs-12">
+		                              <input type="text" required="required" class="form-control col-md-7 col-xs-12" placeholder="Address" ng-model="contract.customer.address.detail">
+		                            </div>
+	                          </div>
+	                      </div>
+	                      
+	                      <div class="col-md-3 col-sm-3 col-xs-12 form-group has-feedback">
+	                        <div class="form-group">
+	                            <label class="control-label col-md-6 col-sm-6 col-xs-12">Province
+	                            </label>
+	                            <div class="col-md-6 col-sm-6 col-xs-12">
+	                              <select ng-options="province as province.name for province in provinces" ng-model="contract.customer.address.province"  id="heard" class="form-control"></select>
+	                            </div>
+	                        </div>
+	                      </div>
+	                      
+	                      <div class="col-md-3 col-sm-3 col-xs-12 form-group has-feedback">
+	                        <div class="form-group">
+	                            <label class="control-label col-md-6 col-sm-6 col-xs-12">District
+	                            </label>
+	                            <div class="col-md-6 col-sm-6 col-xs-12">
+	                              <select ng-options="district as district.name for district in contract.customer.address.province.district" ng-model="contract.customer.address.district"  id="heard" class="form-control"></select>
+	                            </div>
+	                        </div>
+	                      </div>
+	                      
+	                      <div class="col-md-3 col-sm-3 col-xs-12 form-group has-feedback">
+	                        <div class="form-group">
+	                            <label class="control-label col-md-6 col-sm-6 col-xs-12">Sub-District
+	                            </label>
+	                            <div class="col-md-6 col-sm-6 col-xs-12">
+	                              <select ng-options="subdistrict as subdistrict.name for subdistrict in contract.customer.address.district.subdistrict" ng-model="contract.customer.address.subdistrict"  id="heard" class="form-control"></select>
+	                            </div>
+	                        </div>
+	                      </div>
+	                      
+	                      <div class="col-md-3 col-sm-3 col-xs-12 form-group has-feedback">
+		                      <div class="form-group">
+		                            <label class="control-label col-md-6 col-sm-6 col-xs-12" for="first-name">Zipcode
+		                            </label>
+		                            <div class="col-md-6 col-sm-6 col-xs-12">
+		                              <input type="text" required="required" class="form-control col-md-12 col-xs-12" placeholder="Address" ng-model="contract.customer.address.subdistrict.zipcode">
+		                            </div>
+	                          </div>
+	                      </div>
+	                      
+	                      <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
+		                      <div class="form-group">
+		                            <label class="control-label col-md-1 col-sm-1 col-xs-12" for="first-name">Workplace
+		                            </label>
+		                            <div class="col-md-11 col-sm-11 col-xs-12">
+		                              <input type="text" required="required" class="form-control col-md-7 col-xs-12" placeholder="Address" ng-model="contract.customer.workplace.detail">
+		                            </div>
+	                          </div>
+	                      </div>
+	                      
+	                      <div class="col-md-3 col-sm-3 col-xs-12 form-group has-feedback">
+	                        <div class="form-group">
+	                            <label class="control-label col-md-6 col-sm-6 col-xs-12">Province
+	                            </label>
+	                            <div class="col-md-6 col-sm-6 col-xs-12">
+	                              <select ng-options="province as province.name for province in provinces" ng-model="contract.customer.workplace.province"  id="heard" class="form-control"></select>
+	                            </div>
+	                        </div>
+	                      </div>
+	                      
+	                      <div class="col-md-3 col-sm-3 col-xs-12 form-group has-feedback">
+	                        <div class="form-group">
+	                            <label class="control-label col-md-6 col-sm-6 col-xs-12">District
+	                            </label>
+	                            <div class="col-md-6 col-sm-6 col-xs-12">
+	                              <select ng-options="district as district.name for district in contract.customer.workplace.province.district" ng-model="contract.customer.workplace.district"  id="heard" class="form-control"></select>
+	                            </div>
+	                        </div>
+	                      </div>
+	                      
+	                      <div class="col-md-3 col-sm-3 col-xs-12 form-group has-feedback">
+	                        <div class="form-group">
+	                            <label class="control-label col-md-6 col-sm-6 col-xs-12">Sub-District
+	                            </label>
+	                            <div class="col-md-6 col-sm-6 col-xs-12">
+	                              <select ng-options="subdistrict as subdistrict.name for subdistrict in contract.customer.workplace.district.subdistrict" ng-model="contract.customer.workplace.subdistrict"  id="heard" class="form-control"></select>
+	                            </div>
+	                        </div>
+	                      </div>
+	                      
+	                      <div class="col-md-3 col-sm-3 col-xs-12 form-group has-feedback">
+		                      <div class="form-group">
+		                            <label class="control-label col-md-6 col-sm-6 col-xs-12" for="first-name">Zipcode
+		                            </label>
+		                            <div class="col-md-6 col-sm-6 col-xs-12">
+		                              <input type="text" required="required" class="form-control col-md-12 col-xs-12" placeholder="Address" ng-model="contract.customer.workplace.subdistrict.zipcode">
+		                            </div>
+	                          </div>
+	                      </div>
+	                      
+	                      
+                        </form>
+				</div>
+				<div class="modal-footer">
+
+					<button type="button" class="btn btn-success btn-block"
+						ng-click="insertSkill" class="close" data-dismiss="modal"
+						ng-show="inputSkillShow">
+						<b>Submit</b>
+					</button>
+
+					<button type="button" class="btn btn-success btn-block"
+						ng-click="updateSkill(skillUpdate)" class="close"
+						data-dismiss="modal" ng-show="!inputSkillShow">
+						<b>Submit</b>
+					</button>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	
+  </body>
+</html>

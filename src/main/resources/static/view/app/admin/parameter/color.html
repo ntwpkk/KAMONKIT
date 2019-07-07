@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+  </head>
+
+  <body class="nav-md">
+    <div class="container body" ng-init="init()">
+      <div class="main_container">
+        
+
+        <!-- page content -->
+        <div class="right_col" role="main" ng-init="init()">
+          <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h3>Color</h3>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+
+            <div class="row">
+
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  
+                  <div class="x_content">
+                  
+                  <form class="form-horizontal form-label-left">
+
+	                      
+	                      <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
+	                      
+
+		                      <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback" style="background-color:white;">
+		                        <div class="col-md-8 col-sm-8 col-xs-8 form-group has-feedback" style="background-color:white;">
+			                        <input type="text" class="form-control has-feedback-left" id="inputSuccess2" placeholder="Color" ng-model="searchColor">
+			                        <span class="fa fa-search form-control-feedback right" aria-hidden="true"></span>
+		                      	</div>
+		                      	<div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback" style="background-color:white;">
+		                        	<a href="" class="buttonNext btn btn-success" ng-click="insertColor=true" data-toggle="modal" data-target="#ModalColor">Insert Color</a>
+		                      	</div>
+		                      </div>
+		                      
+	                        	<div class="container-table" style="background:rgb(237,237,237);" >
+									<div class="wrap-table" style="overflow:visible;">
+										<div class="table100" style="overflow:visible;">
+											<table style="overflow:visible;">
+												<thead>
+													<tr class="table100-head" >
+														<th class="column1">Number</th>
+														<th class="column2">Color</th>
+														<th class="column3">Manage</th>
+													</tr>
+												</thead>
+												<tbody style="overflow:visible;">
+														<tr ng-repeat="color in colors | orderBy:colorId | filter:searchColor">
+															<td class="column1">{{$index+1}}</td>
+															<td class="column2">{{color.name}}</td>
+															<td class="column6">
+																<div class="btn-group">
+												                    <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle btn-sm" type="button" aria-expanded="false">Manage <span class="caret"></span>
+												                    </button>
+												                    <ul role="menu" class="dropdown-menu">
+												                      <li><a href="" ng-click="clickEditColor(color)" data-toggle="modal" data-target="#ModalColor">Update</a>
+												                      </li>
+												                      <li><a href="">Delete</a>
+												                      </li>
+												                      
+												                    </ul>
+												               	</div>
+															</td>
+														</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+	                      </div>
+	                      
+	                   </form>
+
+
+                   
+                        
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /page content -->
+	  </div>
+	</div>
+        
+
+   <!-- Modal  Color-->
+	<div class="modal fade bd-example-modal-lg" id="ModalColor" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content" >
+				<div class="modal-header">
+					<h3 ng-show="insertColor">Insert Color</h3>
+					<h3 ng-hide="insertColor">Update Color</h3>
+					<span class="close" data-dismiss="modal">x</span>
+
+
+				</div>
+				<div class="modal-body" >
+					<form class="form-horizontal form-label-left">
+
+						  <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
+	                        <div class="form-group">
+	                            <label class="control-label col-md-1 col-sm-1 col-xs-12" >Color Name
+	                            </label>
+	                            <div class="col-md-10 col-sm-10 col-xs-12">
+	                              <input type="text" required="required" class="form-control col-md-7 col-xs-12" placeholder="Color Name" ng-model="colorInsert.name" ng-show="insertColor">
+	                              <input type="text" required="required" class="form-control col-md-7 col-xs-12" placeholder="Color Name" ng-model="colorUpdate.name" ng-hide="insertColor">
+	                            </div>
+	                        </div>
+	                      </div>
+	                      
+	                      
+	                      
+	                      
+                        </form>
+				</div>
+				<div class="modal-footer">
+
+					<button type="button" class="btn btn-success btn-block" ng-click="saveColor()" class="close" data-dismiss="modal" ng-show="insertColor">
+						<b>Submit</b>
+					</button>
+
+					<button type="button" class="btn btn-success btn-block" ng-click="editColor()" class="close" data-dismiss="modal" ng-hide="insertColor">
+						<b>Submit</b>
+					</button>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	
+  </body>
+</html>

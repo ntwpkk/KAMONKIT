@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        
+
+        <!-- page content -->
+        <div class="right_col" role="main" ng-init="init()">
+          <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h3>Create Contract</h3>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+
+            <div class="row">
+
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2> </h2>
+                    
+<!--                     <div class="clearfix"></div> -->
+                  </div>
+                  <div class="x_content">
+
+					
+
+                    <!-- Smart Wizard -->
+                    <p></p>
+                    <div id="wizard" class="form_wizard wizard_horizontal">
+                      <ul class="wizard_steps">
+                        <li>
+                          <a id="step1" href="#"  class="selected">
+                            <span class="step_no">1</span>
+                            <span class="step_descr">
+                                              Step 1<br />
+                                              <small>Step 1 motorcycle</small>
+                                          </span>
+                          </a>
+                        </li>
+                        <li>
+                          <a id="step2" href="#"  class="disabled">
+                            <span class="step_no">2</span>
+                            <span class="step_descr">
+                                              Step 2<br />
+                                              <small>Step 2 customer</small>
+                                          </span>
+                          </a>
+                        </li>
+                        <li>
+                          <a id="step3" href="#"  class="disabled">
+                            <span class="step_no">3</span>
+                            <span class="step_descr">
+                                              Step 3<br />
+                                              <small>Step 3 guarantor</small>
+                                          </span>
+                          </a>
+                        </li>
+                        <li>
+                          <a id="step4" href="#"  class="disabled">
+                            <span class="step_no">4</span>
+                            <span class="step_descr">
+                                              Step 4<br />
+                                              <small>Step 4 contract terms</small>
+                                          </span>
+                          </a>
+                        </li>
+                      </ul>
+                      
+                      <div id="step-1" style="display:block;">
+                        <h2 class="StepTitle">MOTORCYCLE</h2>
+                        <br>
+                        	<form class="form-horizontal form-label-left input_mask">
+                        	
+		                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+		                        <div class="form-group">
+			                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Regist Number</label>
+			                        <div class="col-md-9 col-sm-9 col-xs-12">
+			                          <input type="text" class="form-control" placeholder="Registration Number" ng-model="registrationNumber" ng-show="beforeSearchMotor">
+			                          <input type="text" class="form-control" disabled="disabled" ng-model="motorcycle.registrationNumber" ng-hide="beforeSearchMotor">
+			                        </div>
+		                      	</div>
+		                      </div>
+		                      
+		                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+								<div class="form-group">
+			                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Regist Province</label>
+			                        <div class="col-md-8 col-sm-8 col-xs-12">
+			                          <select ng-options="province as province.name for province in provinces" ng-model="registrationProvince"  id="heard" class="form-control" ng-show="beforeSearchMotor"></select>
+			                          <input type="text" class="form-control" disabled="disabled" ng-model="motorcycle.registrationProvince.name" ng-hide="beforeSearchMotor">
+			                        </div>
+			                        <a class="control-label fa fa-search col-md-1 col-sm-1 col-xs-12" href="" ng-click="getMotorcycleByRegistNumber()" ng-show="beforeSearchMotor"></a>
+		                      	</div>
+		                      </div>
+		                      
+		                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+								<div class="form-group">
+			                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Chassis Number</label>
+			                        <div class="col-md-8 col-sm-8 col-xs-12">
+			                          <input type="text" class="form-control"  placeholder="Chassis Number" ng-model="chassisNumber" ng-show="beforeSearchMotor">
+			                          <input type="text" class="form-control" disabled="disabled" ng-model="motorcycle.chassisNumber" ng-hide="beforeSearchMotor">
+			                        </div>
+			                        <a class="control-label fa fa-search col-md-1 col-sm-1 col-xs-12" href="" ng-click="getMotorcycleByChassisNumber()" ng-show="beforeSearchMotor"></a>
+		                      	</div>
+		                      </div>
+		                      
+		                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+								<div class="form-group">
+			                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Engine Number</label>
+			                        <div class="col-md-8 col-sm-8 col-xs-12">
+			                          <input type="text" class="form-control"  placeholder="Engine Number" ng-model="engineNumber" ng-show="beforeSearchMotor">
+			                          <input type="text" class="form-control" disabled="disabled" ng-model="motorcycle.engineNumber" ng-hide="beforeSearchMotor">
+			                        </div>
+			                        <a class="control-label fa fa-search col-md-1 col-sm-1 col-xs-12" href="" ng-click="getMotorcycleByEngineNumber()" ng-show="beforeSearchMotor"></a>
+		                      	</div>
+		                      </div>
+		                      
+		                      <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
+								<div class="form-group">
+			                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Brand</label>
+			                        <div class="col-md-9 col-sm-9 col-xs-12">
+										  <input type="text" class="form-control" disabled="disabled" placeholder="Brand" ng-model="motorcycle.brand.name">
+			                        </div>
+		                      	</div>
+		                      </div>
+		                      
+		                      <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
+								<div class="form-group">
+			                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Model</label>
+			                        <div class="col-md-9 col-sm-9 col-xs-12">
+			                          <input type="text" class="form-control" disabled="disabled" placeholder="Model" ng-model="motorcycle.model.name">
+			                        </div>
+		                      	</div>
+		                      </div>
+		                      
+		                      <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
+								<div class="form-group">
+			                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Color</label>
+			                        <div class="col-md-9 col-sm-9 col-xs-12">
+			                          <input type="text" class="form-control" disabled="disabled" placeholder="Color" ng-model="motorcycle.color.name">
+			                        </div>
+		                      	</div>
+		                      </div>
+		                    </form>
+                      </div>
+                      
+                      <div id="step-2" style="display:none">
+                        <h2 class="StepTitle">CUSTOMER</h2>
+                        <br>
+                        <form class="form-horizontal form-label-left">
+
+						  <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
+	                        <div class="form-group">
+	                            <label class="control-label col-md-1 col-sm-1 col-xs-12" for="first-name">Citizen ID
+	                            </label>
+	                            <div class="col-md-10 col-sm-10 col-xs-12">
+	                              <input type="text" required="required" class="form-control" placeholder="Citizen ID" ng-model="custCitizenId" ng-show="beforeSearchCust">
+	                              <input type="text" required="required" class="form-control" disabled="disabled" ng-model="customer.citizenId" ng-hide="beforeSearchCust">
+	                            </div>
+	                            <a class="control-label fa fa-user col-md-1 col-sm-1 col-xs-12" href="" ng-click="getCustomerByCitizenId(0,custCitizenId)" ng-show="beforeSearchCust"></a>
+	                        </div>
+	                      </div>
+	                      
+	                      <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
+	                        <div class="form-group">
+		                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Name Title</label>
+		                        <div class="col-md-9 col-sm-9 col-xs-12">
+			                          <input type="text" class="form-control" disabled="disabled" placeholder="Name Title" ng-model="customer.nameTitle.name" >
+		                        </div>
+		                    </div>
+	                      </div>
+	                      
+		                  <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
+	                        <div class="form-group">
+	                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="first-name">First Name 
+	                            </label>
+	                            <div class="col-md-8 col-sm-8 col-xs-12">
+	                              <input type="text" disabled="disabled" class="form-control" placeholder="First Name" ng-model="customer.fname">
+	                            </div>
+	                          </div>
+	                      </div>
+		                   
+		                  <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
+	                        <div class="form-group">
+	                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="first-name">Last Name
+	                            </label>
+	                            <div class="col-md-8 col-sm-8 col-xs-12">
+	                              <input type="text"  disabled="disabled" class="form-control" placeholder="Last Name" ng-model="customer.lname">
+	                            </div>
+	                          </div>
+	                      </div>
+                          
+                          <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
+	                        <div class="form-group">
+	                            <label class="control-label col-md-4 col-sm-4 col-xs-12">Date Of Birth 
+	                            </label>
+	                            <div class="col-md-7 col-sm-7 col-xs-12">
+	                              <input type="date" class="form-control col-md-12 col-xs-12" disabled="disabled" placeholder="Date Of Birth "  ng-model="customer.birthday">
+	                            </div>
+	                        </div>
+	                      </div>
+	                      
+	                      <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
+	                        <div class="form-group">
+	                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Telephone
+	                            </label>
+	                            <div class="col-md-9 col-sm-9 col-xs-12">
+	                              <input type="text" disabled="disabled" class="form-control col-md-7 col-xs-12" placeholder="Telephone" ng-model="customer.telephone">
+	                            </div>
+	                          </div>
+	                      </div>
+	                      
+	                      <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
+		                      <div class="form-group">
+		                            <label class="control-label col-md-1 col-sm-1 col-xs-12" for="first-name">Address
+		                            </label>
+		                            <div class="col-md-11 col-sm-11 col-xs-12">
+		                              <input type="text" disabled="disabled" class="form-control col-md-7 col-xs-12" placeholder="Address" ng-model="customer.address.detail">
+		                            </div>
+	                          </div>
+	                      </div>
+	                      
+	                      <div class="col-md-3 col-sm-3 col-xs-12 form-group has-feedback">
+	                        <div class="form-group">
+	                            <label class="control-label col-md-6 col-sm-6 col-xs-12">Province
+	                            </label>
+	                            <div class="col-md-6 col-sm-6 col-xs-12">
+	                              <input type="text" disabled="disabled" class="form-control col-md-7 col-xs-12" placeholder="Province" ng-model="customer.address.province.name">
+	                            </div>
+	                        </div>
+	                      </div>
+	                      
+	                      <div class="col-md-3 col-sm-3 col-xs-12 form-group has-feedback">
+	                        <div class="form-group">
+	                            <label class="control-label col-md-6 col-sm-6 col-xs-12">District
+	                            </label>
+	                            <div class="col-md-6 col-sm-6 col-xs-12">
+	                              <input type="text" disabled="disabled" class="form-control col-md-7 col-xs-12" placeholder="District" ng-model="customer.address.district.name">
+	                            </div>
+	                        </div>
+	                      </div>
+	                      
+	                      <div class="col-md-3 col-sm-3 col-xs-12 form-group has-feedback">
+	                        <div class="form-group">
+	                            <label class="control-label col-md-6 col-sm-6 col-xs-12">Sub-District
+	                            </label>
+	                            <div class="col-md-6 col-sm-6 col-xs-12">
+	                              <input type="text" disabled="disabled" class="form-control col-md-7 col-xs-12" placeholder="Sub-District" ng-model="customer.address.subdistrict.name">
+	                            </div>
+	                        </div>
+	                      </div>
+	                      
+	                      <div class="col-md-3 col-sm-3 col-xs-12 form-group has-feedback">
+		                      <div class="form-group">
+		                            <label class="control-label col-md-6 col-sm-6 col-xs-12" for="first-name">Zipcode
+		                            </label>
+		                            <div class="col-md-6 col-sm-6 col-xs-12">
+		                              <input type="text" disabled="disabled" required="required" class="form-control col-md-12 col-xs-12" placeholder="Zipcode" ng-model="customer.address.zipcode">
+		                            </div>
+	                          </div>
+	                      </div>
+	                      
+	                      <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
+		                      <div class="form-group">
+		                            <label class="control-label col-md-1 col-sm-1 col-xs-12" for="first-name">Address
+		                            </label>
+		                            <div class="col-md-11 col-sm-11 col-xs-12">
+		                              <input type="text" disabled="disabled" class="form-control col-md-7 col-xs-12" placeholder="Address" ng-model="customer.workplace.detail">
+		                            </div>
+	                          </div>
+	                      </div>
+	                      
+	                      <div class="col-md-3 col-sm-3 col-xs-12 form-group has-feedback">
+	                        <div class="form-group">
+	                            <label class="control-label col-md-6 col-sm-6 col-xs-12">Province
+	                            </label>
+	                            <div class="col-md-6 col-sm-6 col-xs-12">
+	                              <input type="text" disabled="disabled" class="form-control col-md-7 col-xs-12" placeholder="Province" ng-model="customer.workplace.province.name">
+	                            </div>
+	                        </div>
+	                      </div>
+	                      
+	                      <div class="col-md-3 col-sm-3 col-xs-12 form-group has-feedback">
+	                        <div class="form-group">
+	                            <label class="control-label col-md-6 col-sm-6 col-xs-12">District
+	                            </label>
+	                            <div class="col-md-6 col-sm-6 col-xs-12">
+	                              <input type="text" disabled="disabled" class="form-control col-md-7 col-xs-12" placeholder="District" ng-model="customer.workplace.district.name">
+	                            </div>
+	                        </div>
+	                      </div>
+	                      
+	                      <div class="col-md-3 col-sm-3 col-xs-12 form-group has-feedback">
+	                        <div class="form-group">
+	                            <label class="control-label col-md-6 col-sm-6 col-xs-12">Sub-District
+	                            </label>
+	                            <div class="col-md-6 col-sm-6 col-xs-12">
+	                              <input type="text" disabled="disabled" class="form-control col-md-7 col-xs-12" placeholder="Sub-District" ng-model="customer.workplace.subdistrict.name">
+	                            </div>
+	                        </div>
+	                      </div>
+	                      
+	                      <div class="col-md-3 col-sm-3 col-xs-12 form-group has-feedback">
+		                      <div class="form-group">
+		                            <label class="control-label col-md-6 col-sm-6 col-xs-12" for="first-name">Zipcode
+		                            </label>
+		                            <div class="col-md-6 col-sm-6 col-xs-12">
+		                              <input type="text" disabled="disabled" required="required" class="form-control col-md-12 col-xs-12" placeholder="Zipcode" ng-model="customer.workplace.zipcode">
+		                            </div>
+	                          </div>
+	                      </div>
+	                      
+	                      
+                        </form>
+
+                      </div>
+                      
+                      <div id="step-3" style="display:none;">
+                        <h2 class="StepTitle">GUARANTOR</h2>
+                        <br>
+                        <form class="form-horizontal form-label-left">
+
+						  <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
+	                        <div class="form-group">
+	                            <label class="control-label col-md-1 col-sm-1 col-xs-12" for="first-name">Citizen ID
+	                            </label>
+	                            <div class="col-md-10 col-sm-10 col-xs-12">
+	                              <input type="text" required="required" class="form-control" placeholder="Citizen ID" ng-model="guaCitizenId" ng-show="beforeSearchGua">
+	                              <input type="text" required="required" class="form-control" disabled="disabled" ng-model="guarantor.citizenId" ng-hide="beforeSearchGua">
+	                            </div>
+	                            <a class="control-label fa fa-user col-md-1 col-sm-1 col-xs-12" href="" ng-click="getCustomerByCitizenId(1,guaCitizenId)" ng-show="beforeSearchGua"></a>
+	                        </div>
+	                      </div>
+	                      
+	                      <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
+	                        <div class="form-group">
+		                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Name Title</label>
+		                        <div class="col-md-9 col-sm-9 col-xs-12">
+			                          <input type="text" class="form-control" disabled="disabled" placeholder="Name Title" ng-model="guarantor.nameTitle.name">
+		                        </div>
+		                    </div>
+	                      </div>
+	                      
+		                  <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
+	                        <div class="form-group">
+	                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="first-name">First Name 
+	                            </label>
+	                            <div class="col-md-8 col-sm-8 col-xs-12">
+	                              <input type="text" disabled="disabled" class="form-control" placeholder="First Name" ng-model="guarantor.fname">
+	                            </div>
+	                          </div>
+	                      </div>
+		                   
+		                  <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
+	                        <div class="form-group">
+	                            <label class="control-label col-md-4 col-sm-4 col-xs-12" for="first-name">Last Name
+	                            </label>
+	                            <div class="col-md-8 col-sm-8 col-xs-12">
+	                              <input type="text"  disabled="disabled" class="form-control" placeholder="Last Name" ng-model="guarantor.lname">
+	                            </div>
+	                          </div>
+	                      </div>
+                          
+                          <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
+	                        <div class="form-group">
+	                            <label class="control-label col-md-4 col-sm-4 col-xs-12">Date Of Birth 
+	                            </label>
+	                            <div class="col-md-7 col-sm-7 col-xs-12">
+	                              <input type="date" class="form-control col-md-12 col-xs-12" disabled="disabled" placeholder="Date Of Birth "  ng-model="guarantor.birthday">
+	                            </div>
+	                        </div>
+	                      </div>
+	                      
+	                      <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
+	                        <div class="form-group">
+	                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Telephone
+	                            </label>
+	                            <div class="col-md-9 col-sm-9 col-xs-12">
+	                              <input type="text" disabled="disabled" class="form-control col-md-7 col-xs-12" placeholder="Telephone" ng-model="guarantor.telephone">
+	                            </div>
+	                          </div>
+	                      </div>
+	                      
+	                      <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
+		                      <div class="form-group">
+		                            <label class="control-label col-md-1 col-sm-1 col-xs-12" for="first-name">Address
+		                            </label>
+		                            <div class="col-md-11 col-sm-11 col-xs-12">
+		                              <input type="text" disabled="disabled" class="form-control col-md-7 col-xs-12" placeholder="Address" ng-model="guarantor.address.detail">
+		                            </div>
+	                          </div>
+	                      </div>
+	                      
+	                      <div class="col-md-3 col-sm-3 col-xs-12 form-group has-feedback">
+	                        <div class="form-group">
+	                            <label class="control-label col-md-6 col-sm-6 col-xs-12">Province
+	                            </label>
+	                            <div class="col-md-6 col-sm-6 col-xs-12">
+	                              <input type="text" disabled="disabled" class="form-control col-md-7 col-xs-12" placeholder="Province" ng-model="guarantor.address.province.name">
+	                            </div>
+	                        </div>
+	                      </div>
+	                      
+	                      <div class="col-md-3 col-sm-3 col-xs-12 form-group has-feedback">
+	                        <div class="form-group">
+	                            <label class="control-label col-md-6 col-sm-6 col-xs-12">District
+	                            </label>
+	                            <div class="col-md-6 col-sm-6 col-xs-12">
+	                              <input type="text" disabled="disabled" class="form-control col-md-7 col-xs-12" placeholder="District" ng-model="guarantor.address.district.name">
+	                            </div>
+	                        </div>
+	                      </div>
+	                      
+	                      <div class="col-md-3 col-sm-3 col-xs-12 form-group has-feedback">
+	                        <div class="form-group">
+	                            <label class="control-label col-md-6 col-sm-6 col-xs-12">Sub-District
+	                            </label>
+	                            <div class="col-md-6 col-sm-6 col-xs-12">
+	                              <input type="text" disabled="disabled" class="form-control col-md-7 col-xs-12" placeholder="Sub-District" ng-model="guarantor.address.subdistrict.name">
+	                            </div>
+	                        </div>
+	                      </div>
+	                      
+	                      <div class="col-md-3 col-sm-3 col-xs-12 form-group has-feedback">
+		                      <div class="form-group">
+		                            <label class="control-label col-md-6 col-sm-6 col-xs-12" for="first-name">Zipcode
+		                            </label>
+		                            <div class="col-md-6 col-sm-6 col-xs-12">
+		                              <input type="text" disabled="disabled" required="required" class="form-control col-md-12 col-xs-12" placeholder="Zipcode" ng-model="guarantor.address.zipcode">
+		                            </div>
+	                          </div>
+	                      </div>
+	                      
+	                      <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
+		                      <div class="form-group">
+		                            <label class="control-label col-md-1 col-sm-1 col-xs-12" for="first-name">Address
+		                            </label>
+		                            <div class="col-md-11 col-sm-11 col-xs-12">
+		                              <input type="text" disabled="disabled" class="form-control col-md-7 col-xs-12" placeholder="Address" ng-model="guarantor.workplace.detail">
+		                            </div>
+	                          </div>
+	                      </div>
+	                      
+	                      <div class="col-md-3 col-sm-3 col-xs-12 form-group has-feedback">
+	                        <div class="form-group">
+	                            <label class="control-label col-md-6 col-sm-6 col-xs-12">Province
+	                            </label>
+	                            <div class="col-md-6 col-sm-6 col-xs-12">
+	                              <input type="text" disabled="disabled" class="form-control col-md-7 col-xs-12" placeholder="Province" ng-model="guarantor.workplace.province.name">
+	                            </div>
+	                        </div>
+	                      </div>
+	                      
+	                      <div class="col-md-3 col-sm-3 col-xs-12 form-group has-feedback">
+	                        <div class="form-group">
+	                            <label class="control-label col-md-6 col-sm-6 col-xs-12">District
+	                            </label>
+	                            <div class="col-md-6 col-sm-6 col-xs-12">
+	                              <input type="text" disabled="disabled" class="form-control col-md-7 col-xs-12" placeholder="District" ng-model="guarantor.workplace.district.name">
+	                            </div>
+	                        </div>
+	                      </div>
+	                      
+	                      <div class="col-md-3 col-sm-3 col-xs-12 form-group has-feedback">
+	                        <div class="form-group">
+	                            <label class="control-label col-md-6 col-sm-6 col-xs-12">Sub-District
+	                            </label>
+	                            <div class="col-md-6 col-sm-6 col-xs-12">
+	                              <input type="text" disabled="disabled" class="form-control col-md-7 col-xs-12" placeholder="Sub-District" ng-model="guarantor.workplace.subdistrict.name">
+	                            </div>
+	                        </div>
+	                      </div>
+	                      
+	                      <div class="col-md-3 col-sm-3 col-xs-12 form-group has-feedback">
+		                      <div class="form-group">
+		                            <label class="control-label col-md-6 col-sm-6 col-xs-12" for="first-name">Zipcode
+		                            </label>
+		                            <div class="col-md-6 col-sm-6 col-xs-12">
+		                              <input type="text" disabled="disabled" required="required" class="form-control col-md-12 col-xs-12" placeholder="Zipcode" ng-model="guarantor.workplace.zipcode">
+		                            </div>
+	                          </div>
+	                      </div>
+	                      
+	                      
+                        </form>
+
+                      </div>
+                      <div id="step-4" style="display:none;">
+                        <h2 class="StepTitle">Step 4 Content</h2>
+                        <form class="form-horizontal form-label-left">
+
+						  <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
+						  
+						  	<div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
+		                        <div class="form-group">
+		                        	<div class="col-md-2 col-sm-2 col-xs-2"> </div>
+		                            <div class="col-md-2 col-sm-2 col-xs-2">
+		                              <input type="text" required="required" class="form-control"  disabled="disabled" ng-model="code1" style="height:20vh;font-size:400%;text-align:center;">
+		                            </div>
+		                            <div class="col-md-1 col-sm-1 col-xs-1" style="height:20vh;font-size:400%;text-align:center;">
+		                              -
+		                            </div>
+		                            <div class="col-md-2 col-sm-2 col-xs-2">
+		                              <input type="text" required="required" class="form-control"  disabled="disabled" ng-model="code2" style="height:20vh;font-size:400%;text-align:center;">
+		                            </div>
+		                            <div class="col-md-1 col-sm-1 col-xs-1" style="height:20vh;font-size:400%;text-align:center;">
+		                              -
+		                            </div>
+		                            <div class="col-md-2 col-sm-2 col-xs-2">
+		                              <input type="text" required="required" class="form-control"  ng-model="code3"  style="height:20vh;font-size:400%;text-align:center;background-color:#f9f9f9;">
+		                            </div>
+		                            <div class="col-md-2 col-sm-2 col-xs-2"> </div>
+		                        </div>
+		                    </div>
+						  
+	                        <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+		                        <div class="form-group">
+		                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Price
+		                            </label>
+		                            <div class="col-md-8 col-sm-8 col-xs-12">
+		                              <input type="text" required="required" class="form-control" placeholder="Price"  ng-value="motorcycle.price">
+		                            </div>
+		                        </div>
+		                      </div>
+		                      
+		                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+		                        <div class="form-group">
+		                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Down Payment
+		                            </label>
+		                            <div class="col-md-8 col-sm-8 col-xs-12">
+		                              <input type="text" required="required" class="form-control" placeholder="Down Payment" ng-model="contract.downPayment">
+		                            </div>
+		                        </div>
+	                      	  </div>
+		                      
+		                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+		                        <div class="form-group">
+		                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Interrest Rate
+		                            </label>
+		                            <div class="col-md-8 col-sm-8 col-xs-12">
+		                              <input type="text" required="required" class="form-control" placeholder="Interrest Rate" ng-model="contract.interestRate">
+		                            </div>
+		                        </div>
+	                      	  </div>
+	                      	  
+	                      	  <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+		                        <div class="form-group">
+		                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Number of Installments
+		                            </label>
+		                            <div class="col-md-8 col-sm-8 col-xs-12">
+		                              <select ng-options="numin as numin for numin in numberofInstallments" ng-model="contract.numberofInstallment"  id="heard" class="form-control" ></select>
+		                            </div>
+		                        </div>
+	                      	  </div>
+	                      	  
+	                      	  <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+		                        <a href="" class="buttonFinish  btn btn-default" ng-click="calculate()" >Calculate</a>
+	                      	  </div>
+	                      </div>
+	                      
+	                      
+	                      
+	                      
+	                      
+	                      <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback" >
+	                        	<div ng-show="showInstallmentTable" class="container-table" style="background:rgb(237,237,237);">
+									<div class="wrap-table">
+										<div class="table100">
+											<table>
+												<thead>
+													<tr class="table100-head">
+														<th class="column1">Number</th>
+														<th class="column1">Date</th>
+														<th class="column1">Cost</th>
+														<th class="column1">Interest</th>
+														<th class="column1">pay an installment </th>
+<!-- 														<th class="column1">Cost</th> -->
+													</tr>
+												</thead>
+												<tbody>
+														<tr ng-repeat="installment in installments">
+															<td class="column1">{{$index+1}}</td>
+															<td class="column1">{{installment.dateStr}}</td>
+															<td class="column1">{{installment.cost}}</td>
+															<th class="column1">{{installment.interest}}</th>
+															<th class="column1">{{installment.pay}}</th>
+														</tr>
+														
+											
+														
+														
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+	                      </div>
+	                     </form>
+                      </div>
+
+						<div class="actionBar">
+							<div class="msgBox">
+								<div class="content">
+									</div><a href="#" class="close">X</a></div>
+									<div class="loader">Loading</div>
+									<a href="/report" target="_blank" class="buttonFinish  btn btn-success" ng-click="" ng-show="showReport">Report</a>
+									<a href="" class="buttonFinish  btn btn-success" ng-click="insertContract()" ng-show="showFinish" >Finish</a>
+									
+<!-- 									<a href="" class="buttonFinish  btn btn-default" ng-click="getContractData()" ng-show="showFinish">getContractData</a> -->
+									<a href="" class="buttonNext btn btn-success" ng-click="nextBtn()" ng-show="showNext">Next</a>
+									<a href="" class="buttonPrevious btn btn-primary " ng-click="prevBtn()" ng-show="showPrev">Previous</a>
+								</div>
+							</div>
+						</div>
+                    </div>
+                    <!-- End SmartWizard Content -->
+
+
+                    
+                  </div>
+                </div>
+          </div>
+        </div>
+        <!-- /page content -->
+	  </div>
+	</div>
+        
+
+   
+
+	
+  </body>
+</html>

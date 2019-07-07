@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        
+
+        <!-- page content -->
+        <div class="right_col" role="main" ng-init="init()">
+          <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h3>Import Motorcycle</h3>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+
+            <div class="row">
+
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  
+                  <div class="x_content">
+
+					<form class="form-horizontal form-label-left input_mask">
+                       	
+	                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+	                        <div class="form-group">
+		                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Regist Number</label>
+		                        <div class="col-md-9 col-sm-9 col-xs-12">
+		                          <input type="text" class="form-control" placeholder="Registration Number" ng-model="motorcycle.registrationNumber">
+		                        </div>
+	                      	</div>
+	                      </div>
+	                      
+	                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+							<div class="form-group">
+		                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Regist Province</label>
+		                        <div class="col-md-9 col-sm-9 col-xs-12">
+		                          <select ng-options="province as province.name for province in provinces" ng-model="motorcycle.registrationProvince"  class="form-control"></select>
+		                        </div>
+	                      	</div>
+	                      </div>
+	                      
+	                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+							<div class="form-group">
+		                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Chassis Number</label>
+		                        <div class="col-md-9 col-sm-9 col-xs-12">
+		                          <input type="text" class="form-control" placeholder="Chassis Number" ng-model="motorcycle.chassisNumber">
+		                        </div>
+	                      	</div>
+	                      </div>
+	                      
+	                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+							<div class="form-group">
+		                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Engine Number</label>
+		                        <div class="col-md-9 col-sm-9 col-xs-12">
+		                          <input type="text" class="form-control" placeholder="Engine Number" ng-model="motorcycle.engineNumber">
+		                        </div>
+	                      	</div>
+	                      </div>
+	                      
+	                      <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
+							<div class="form-group">
+		                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Brand</label>
+		                        <div class="col-md-9 col-sm-9 col-xs-12">
+									  <select ng-options="brand as brand.name for brand in brands" ng-model="motorcycle.brand"  class="form-control"></select>
+		                        </div>
+	                      	</div>
+	                      </div>
+	                      
+	                      <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
+							<div class="form-group">
+		                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Model</label>
+		                        <div class="col-md-9 col-sm-9 col-xs-12">
+		                          <select ng-options="model as model.name for model in motorcycle.brand.model" ng-model="motorcycle.model"   class="form-control"></select>
+		                        </div>
+	                      	</div>
+	                      </div>
+	                      
+	                      <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
+							<div class="form-group">
+		                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Color</label>
+		                        <div class="col-md-9 col-sm-9 col-xs-12">
+		                          <select ng-options="color as color.name for color in colors" ng-model="motorcycle.color"   class="form-control"></select>
+		                        </div>
+	                      	</div>
+	                      </div>
+	                      
+	                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+							<div class="form-group">
+		                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Type</label>
+		                        <div class="col-md-9 col-sm-9 col-xs-12">
+		                          <select ng-options="type as type for type in types" ng-model="motorcycle.type"   class="form-control"></select>
+		                        </div>
+	                      	</div>
+	                      </div>
+	                      
+	                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+							<div class="form-group">
+		                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Status</label>
+		                        <div class="col-md-9 col-sm-9 col-xs-12">
+		                          <select ng-options="status as status for status in statuss" ng-model="motorcycle.status"   class="form-control"></select>
+		                        </div>
+	                      	</div>
+	                      </div>
+	                      
+	                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+							<div class="form-group">
+		                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Price</label>
+		                        <div class="col-md-9 col-sm-9 col-xs-12">
+		                          <input type="text" class="form-control" placeholder="Price" ng-model="motorcycle.price">
+		                        </div>
+	                      	</div>
+	                      </div>
+	                      
+	                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+							<div class="form-group">
+		                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Down Payment</label>
+		                        <div class="col-md-9 col-sm-9 col-xs-12">
+		                          <input type="text" class="form-control" placeholder="Down Payment" ng-model="motorcycle.downPayment">
+		                        </div>
+	                      	</div>
+	                      </div>
+	                      
+	                      <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
+		                      <div class="form-group">
+			                    <label class="control-label col-md-1 col-sm-1 col-xs-12">Note</label>
+			                    <div class="col-md-11 col-sm-11 col-xs-12">
+			                      <textarea class="resizable_textarea form-control" ng-model="motorcycle.note"></textarea>
+			                    </div>
+			                  </div> 
+			              </div>
+	                      
+	                      
+	                 </form>
+                   		<div class="actionBar">
+							<div class="msgBox">
+								<div class="content">
+									<a href="" class="buttonFinish  btn btn-success" ng-click="insertMotorcycle()">Finish</a>	
+								</div>
+							</div>
+						</div>
+                        
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /page content -->
+	  </div>
+	</div>
+        
+
+   
+
+	
+  </body>
+</html>

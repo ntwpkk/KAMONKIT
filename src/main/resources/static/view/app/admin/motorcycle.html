@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	  
+
+    
+    
+    
+  </head>
+
+  <body class="nav-md">
+    <div class="container body" ng-init="init()">
+      <div class="main_container">
+        
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+          <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h3>Motorcycle</h3>
+              </div>
+            </div>
+            <div class="clearfix"></div>       
+
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <form class="form-horizontal form-label-left input_mask">
+                       	
+	                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+	                        <div class="form-group">
+		                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Regist Number</label>
+		                        <div class="col-md-9 col-sm-9 col-xs-12">
+		                          <input type="text" class="form-control" placeholder="Registration Number" ng-model="motorcycle.registrationNumber">
+		                        </div>
+	                      	</div>
+	                      </div>
+	                      
+	                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+							<div class="form-group">
+		                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Regist Province</label>
+		                        <div class="col-md-7 col-sm-7 col-xs-12">
+		                          <select ng-options="province as province.name for province in provinces" ng-model="motorcycle.registrationProvince"  class="form-control"></select>
+		                        </div>
+		                        <a class="control-label fa fa-search col-md-2 col-sm-2 col-xs-12" href="#"></a>
+	                      	</div>
+	                      </div>
+	                      
+	                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+							<div class="form-group">
+		                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Chassis Number</label>
+		                        <div class="col-md-9 col-sm-9 col-xs-12">
+		                          <input type="text" class="form-control" placeholder="Chassis Number" ng-model="motorcycle.chassisNumber">
+		                        </div>
+	                      	</div>
+	                      </div>
+	                      
+	                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+							<div class="form-group">
+		                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Engine Number</label>
+		                        <div class="col-md-9 col-sm-9 col-xs-12">
+		                          <input type="text" class="form-control" placeholder="Engine Number" ng-model="motorcycle.engineNumber">
+		                        </div>
+	                      	</div>
+	                      </div>
+	               	</form>
+                  
+					<div class="container-table" style="background:rgb(237,237,237);overflow:visible;" >
+						<div class="wrap-table" style="overflow:visible;">
+							<div class="table100" style="overflow:visible;">
+								<table style="overflow:visible;">
+									<thead>
+										<tr class="table100-head">
+											<th class="column1">Number</th>
+											<th class="column2">Status</th>
+											<th class="column3">Model</th>
+											<th class="column4">Registration Number</th>
+											<th class="column5">Chassis Number</th>
+											<th class="column6">Engine Number</th>
+											<th class="column7">Manage</th>
+										</tr>
+									</thead>
+									<tbody style="overflow:visible;">
+											<tr>
+<!-- 											<tr ng-repeat="motor in motorcycleAll | orderBy:sortType:sortReverse | filter:searchMotorcycle"> -->
+												<td class="column1">1</td>
+												<td class="column2">in</td>
+												<td class="column3">Filano</td>
+												<td class="column4">กข2489ชลบุรี</td>
+												<td class="column5">JA140E0959231</td>
+												<td class="column6">MLHJA1408J5959231</td>
+												<td class="column7">
+													<div class="btn-group">
+									                    <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle btn-sm" type="button" aria-expanded="false">Manage <span class="caret"></span>
+									                    </button>
+									                    <ul role="menu" class="dropdown-menu">
+									                      <li><a href="" data-toggle="modal" data-target="#ModalUpdate">View</a>
+									                      </li>
+									                      <li><a href="" data-toggle="modal" data-target="#ModalUpdate">Update</a>
+									                      </li>
+									                      <li><a href="">Delete</a>
+									                      </li>
+									                      
+									                    </ul>
+									               	</div>
+												</td>
+											</tr>
+											
+											<tr>
+<!-- 											<tr ng-repeat="motor in motorcycleAll | orderBy:sortType:sortReverse | filter:searchMotorcycle"> -->
+												<td class="column1">2</td>
+												<td class="column2">in</td>
+												<td class="column3">MSX</td>
+												<td class="column4">กข2489ชลบุรี</td>
+												<td class="column5">JA140E0959231</td>
+												<td class="column6">MLHJA1408J5959231</td>
+												<td class="column7">
+													<div class="btn-group">
+									                    <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle btn-sm" type="button" aria-expanded="false">Manage <span class="caret"></span>
+									                    </button>
+									                    <ul role="menu" class="dropdown-menu">
+									                      <li><a href="" data-toggle="modal" data-target="#ModalUpdate">View</a>
+									                      </li>
+									                      <li><a href="" data-toggle="modal" data-target="#ModalUpdate">Update</a>
+									                      </li>
+									                      <li><a href="">Delete</a>
+									                      </li>
+									                      
+									                    </ul>
+									               	</div>
+												</td>
+											</tr>
+											
+											<tr>
+<!-- 											<tr ng-repeat="motor in motorcycleAll | orderBy:sortType:sortReverse | filter:searchMotorcycle"> -->
+												<td class="column1">3</td>
+												<td class="column2">out</td>
+												<td class="column3">Scoopy</td>
+												<td class="column4">กข2489ชลบุรี</td>
+												<td class="column5">JA140E0959231</td>
+												<td class="column6">MLHJA1408J5959231</td>
+												<td class="column7">
+													<div class="btn-group">
+									                    <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle btn-sm" type="button" aria-expanded="false">Manage <span class="caret"></span>
+									                    </button>
+									                    <ul role="menu" class="dropdown-menu">
+									                      <li><a href="" data-toggle="modal" data-target="#ModalUpdate">View</a>
+									                      </li>
+									                      <li><a href="" data-toggle="modal" data-target="#ModalUpdate">Update</a>
+									                      </li>
+									                      <li><a href="">Delete</a>
+									                      </li>
+									                      
+									                    </ul>
+									               	</div>
+												</td>
+											</tr>
+											
+											<tr>
+<!-- 											<tr ng-repeat="motor in motorcycleAll | orderBy:sortType:sortReverse | filter:searchMotorcycle"> -->
+												<td class="column1">4</td>
+												<td class="column2">out</td>
+												<td class="column3">Click125</td>
+												<td class="column4">กข2489ชลบุรี</td>
+												<td class="column5">JA140E0959231</td>
+												<td class="column6">MLHJA1408J5959231</td>
+												<td class="column7">
+													<div class="btn-group">
+									                    <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle btn-sm" type="button" aria-expanded="false">Manage <span class="caret"></span>
+									                    </button>
+									                    <ul role="menu" class="dropdown-menu">
+									                      <li><a href="" data-toggle="modal" data-target="#ModalUpdate">View</a>
+									                      </li>
+									                      <li><a href="" data-toggle="modal" data-target="#ModalUpdate">Update</a>
+									                      </li>
+									                      <li><a href="">Delete</a>
+									                      </li>
+									                      
+									                    </ul>
+									               	</div>
+												</td>
+											</tr>
+											
+											
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+	
+                  
+                  <div class="x_content">
+                    <br />
+                      
+                    
+
+                  
+	              </div>
+	            </div>
+	          </div>
+	        </div>
+        <!-- /page content -->
+      	</div>
+      </div>
+	 </div>
+	</div>
+    
+    
+    
+    
+    
+    <!-- Modal  Insert-->
+	<div class="modal fade bd-example-modal-lg" id="ModalUpdate" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content" >
+				<div class="modal-header">
+					<h3 ng-show="inputSkillShow">Insert Motorcycle</h3>
+					<h3 ng-show="!inputSkillShow">Update Motorcycle</h3>
+					<span class="close" data-dismiss="modal">x</span>
+
+
+				</div>
+				<div class="modal-body" >
+					<form class="form-horizontal form-label-left input_mask">
+                        	
+		                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+		                        <div class="form-group">
+			                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Regist Number</label>
+			                        <div class="col-md-9 col-sm-9 col-xs-12">
+			                          <input type="text" class="form-control" placeholder="Registration Number" ng-model="motorcycle.registrationNumber">
+			                        </div>
+		                      	</div>
+		                      </div>
+		                      
+		                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+								<div class="form-group">
+			                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Regist Province</label>
+			                        <div class="col-md-9 col-sm-9 col-xs-12">
+			                          <select ng-options="province as province.name for province in provinces" ng-model="motorcycle.registrationProvince"  class="form-control"></select>
+			                        </div>
+		                      	</div>
+		                      </div>
+		                      
+		                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+								<div class="form-group">
+			                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Chassis Number</label>
+			                        <div class="col-md-9 col-sm-9 col-xs-12">
+			                          <input type="text" class="form-control" placeholder="Chassis Number" ng-model="motorcycle.chassisNumber">
+			                        </div>
+		                      	</div>
+		                      </div>
+		                      
+		                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+								<div class="form-group">
+			                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Engine Number</label>
+			                        <div class="col-md-9 col-sm-9 col-xs-12">
+			                          <input type="text" class="form-control" placeholder="Engine Number" ng-model="motorcycle.engineNumber">
+			                        </div>
+		                      	</div>
+		                      </div>
+		                      
+		                      <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
+								<div class="form-group">
+			                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Brand</label>
+			                        <div class="col-md-9 col-sm-9 col-xs-12">
+										  <select ng-options="brand as brand.name for brand in brands" ng-model="motorcycle.brand"  class="form-control"></select>
+			                        </div>
+		                      	</div>
+		                      </div>
+		                      
+		                      <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
+								<div class="form-group">
+			                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Model</label>
+			                        <div class="col-md-9 col-sm-9 col-xs-12">
+			                          <select ng-options="model as model.name for model in motorcycle.brand.model" ng-model="motorcycle.model"   class="form-control"></select>
+			                        </div>
+		                      	</div>
+		                      </div>
+		                      
+		                      <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
+								<div class="form-group">
+			                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Color</label>
+			                        <div class="col-md-9 col-sm-9 col-xs-12">
+			                          <select ng-options="color as color.name for color in colors" ng-model="motorcycle.color"   class="form-control"></select>
+			                        </div>
+		                      	</div>
+		                      </div>
+		                      
+		                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+								<div class="form-group">
+			                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Import Type</label>
+			                        <div class="col-md-9 col-sm-9 col-xs-12">
+			                          <select ng-options="color as color.name for color in colors" ng-model="motorcycle.color"   class="form-control"></select>
+			                        </div>
+		                      	</div>
+		                      </div>
+		                      
+		                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+								<div class="form-group">
+			                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Import From</label>
+			                        <div class="col-md-9 col-sm-9 col-xs-12">
+			                          <select ng-options="color as color.name for color in colors" ng-model="motorcycle.color"   class="form-control"></select>
+			                        </div>
+		                      	</div>
+		                      </div>
+		                      
+		                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+								<div class="form-group">
+			                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Price</label>
+			                        <div class="col-md-9 col-sm-9 col-xs-12">
+			                          <input type="text" class="form-control" placeholder="Price" ng-model="motorcycle.price">
+			                        </div>
+		                      	</div>
+		                      </div>
+		                      
+		                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+								<div class="form-group">
+			                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Down Payment</label>
+			                        <div class="col-md-9 col-sm-9 col-xs-12">
+			                          <input type="text" class="form-control" placeholder="Down Payment" ng-model="motorcycle.downpayment">
+			                        </div>
+		                      	</div>
+		                      </div>
+		                      
+		                      <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
+			                      <div class="form-group">
+				                    <label class="control-label col-md-1 col-sm-1 col-xs-12">Note</label>
+				                    <div class="col-md-11 col-sm-11 col-xs-12">
+				                      <textarea class="resizable_textarea form-control" ng-model="motorcycle.note"></textarea>
+				                    </div>
+				                  </div> 
+				              </div>
+		                      
+		                      
+		                 </form>
+				</div>
+				<div class="modal-footer">
+
+					<button type="button" class="btn btn-success btn-block"
+						ng-click="insertSkill" class="close" data-dismiss="modal"
+						ng-show="inputSkillShow">
+						<b>Submit</b>
+					</button>
+
+					<button type="button" class="btn btn-success btn-block"
+						ng-click="updateSkill(skillUpdate)" class="close"
+						data-dismiss="modal" ng-show="!inputSkillShow">
+						<b>Submit</b>
+					</button>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	
+  </body>
+</html>

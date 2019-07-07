@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        
+
+        <!-- page content -->
+        <div class="right_col" role="main" ng-init="init()">
+          <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h3>Pay an Installment</h3>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+
+            <div class="row">
+
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  
+                  <div class="x_content">
+
+					<form class="form-horizontal form-label-left input_mask">
+                       	
+	                      <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
+		                        <div class="form-group">
+			                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Contract Code</label>
+			                        <div class="col-md-8 col-sm-8 col-xs-12">
+			                          <input type="text" class="form-control" placeholder="Contract Code" ng-model="contractcode" ng-show="beforeSearch">
+			                          <input type="text" class="form-control" disabled="disabled" ng-model="contractcode" ng-hide="beforeSearch">
+			                        </div>
+			                        <a class="control-label fa fa-search col-md-1 col-sm-1 col-xs-12" href="" ng-click="getContractByCode()" ng-show="beforeSearch"></a>
+		                      	</div>
+		                      </div>
+		                      
+		                      <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback" ng-hide="beforeSearch">
+								<div class="form-group">
+			                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Motorcycle</label>
+			                        <div class="col-md-8 col-sm-8 col-xs-12">
+			                          <input type="text" class="form-control" disabled="disabled" ng-model="contract.motorcycle.registrationNumber" >
+			                        </div>
+		                      	</div>
+		                      </div>
+		                      
+		                      <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback" ng-hide="beforeSearch">
+								<div class="form-group">
+			                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Customer</label>
+			                        <div class="col-md-8 col-sm-8 col-xs-12">
+			                          <input type="text" class="form-control" disabled="disabled" ng-model="cname" >
+			                        </div>
+		                      	</div>
+		                      </div>
+		                      
+		                      <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback" ng-hide="beforeSearch">
+								<div class="form-group">
+			                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Guarantor</label>
+			                        <div class="col-md-8 col-sm-8 col-xs-12">
+			                          <input type="text" class="form-control" disabled="disabled" ng-model="gname" >
+			                        </div>
+		                      	</div>
+		                      </div>
+		                      
+		                       <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback" ng-hide="beforeSearch">
+								<div class="form-group">
+			                        <label class="control-label col-md-3 col-sm-3 col-xs-12">No</label>
+			                        <div class="col-md-8 col-sm-8 col-xs-12">
+			                          <input type="text" class="form-control" disabled="disabled" ng-model="contract.currentMonth" >
+			                        </div>
+		                      	</div>
+		                      </div>
+		                      
+		                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback" ng-hide="beforeSearch">
+								<div class="form-group">
+			                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Pay</label>
+			                        <div class="col-md-8 col-sm-8 col-xs-12">
+			                          <input type="text" class="form-control"  ng-model="contract.monthlyPay" >
+			                        </div>
+		                      	</div>
+		                      </div>
+		                      
+		                      
+		              </form>
+		              
+		              <div class="actionBar" ng-hide="beforeSearch">
+						<div class="msgBox">
+							<div class="content">
+								<a href="" class="buttonFinish  btn btn-success" ng-click="payInstallment()">Finish</a>	
+							</div>
+						</div>
+					</div>
+                   
+                        
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /page content -->
+	  </div>
+	</div>
+        
+
+   
+
+	
+  </body>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        
+
+        <!-- page content -->
+        <div class="right_col" role="main" ng-init="init()">
+          <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h3>Brand</h3>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+
+            <div class="row">
+
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  
+                  <div class="x_content">
+
+					 <form class="form-horizontal form-label-left">
+
+	                      
+	                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+	                      
+
+		                      <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback" style="background-color:white;">
+		                        <div class="col-md-8 col-sm-8 col-xs-8 form-group has-feedback" style="background-color:white;">
+			                        <input type="text" class="form-control has-feedback-left" id="inputSuccess2" placeholder="Brand" ng-model="searchBrand ">
+			                        <span class="fa fa-search form-control-feedback right" aria-hidden="true"></span>
+		                      	</div>
+		                      	<div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback" style="background-color:white;">
+		                        	<a href="" class="buttonNext btn btn-success" ng-click="insertBrand=true" data-toggle="modal" data-target="#ModalBrand">Insert Brand</a>
+		                      	</div>
+		                      </div>
+		                      
+	                        	<div class="container-table" style="background:rgb(237,237,237);" >
+									<div class="wrap-table" style="overflow:visible;">
+										<div class="table100" style="overflow:visible;">
+											<table style="overflow:visible;">
+												<thead>
+													<tr class="table100-head" >
+														<th class="column1">Number</th>
+														<th class="column2">Brand</th>
+														<th class="column3">Manage</th>
+													</tr>
+												</thead>
+												<tbody style="overflow:visible;">
+														<tr ng-repeat="brand in brands | orderBy:brandId | filter:searchBrand">
+															<td class="column1">{{$index+1}}</td>
+															<td class="column2">{{brand.name}}</td>
+															<td class="column6">
+																<div class="btn-group">
+												                    <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle btn-sm" type="button" aria-expanded="false">Manage <span class="caret"></span>
+												                    </button>
+												                    <ul role="menu" class="dropdown-menu">
+												                      <li><a href="" ng-click="selectBrand(brand.brandId)">View</a>
+												                      </li>
+												                      <li><a href="" ng-click="clickEditBrand(brand)" data-toggle="modal" data-target="#ModalBrand">Update</a>
+												                      </li>
+												                      <li><a href="">Delete</a>
+												                      </li>
+												                      
+												                    </ul>
+												               	</div>
+															</td>
+														</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+	                      </div>
+	                      
+	                      
+	                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback" ng-show="showModel">
+	                      
+
+		                      <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback" style="background-color:white;" >
+		                        <div class="col-md-8 col-sm-8 col-xs-8 form-group has-feedback" style="background-color:white;">
+			                        <input type="text" class="form-control has-feedback-left" id="inputSuccess2" placeholder="Model" ng-model="searchModel">
+			                        <span class="fa fa-search form-control-feedback right" aria-hidden="true"></span>
+		                      	</div>
+		                      	<div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback" style="background-color:white;">
+		                        	<a href="" class="buttonNext btn btn-success"  ng-click="insertModel=true" data-toggle="modal" data-target="#ModalModel">Insert Model</a>
+		                      	</div>
+		                      </div>
+		                      
+	                        	<div class="container-table" style="background:rgb(237,237,237);" >
+									<div class="wrap-table" style="overflow:visible;">
+										<div class="table100" style="overflow:visible;">
+											<table style="overflow:visible;">
+												<thead>
+													<tr class="table100-head" >
+														<th class="column1">Number</th>
+														<th class="column2">Model</th>
+														<th class="column3">Manage</th>
+													</tr>
+												</thead>
+												<tbody style="overflow:visible;">
+														<tr ng-repeat="model in models | orderBy:modelId | filter:searchModel">
+															<td class="column1">{{$index+1}}</td>
+															<td class="column2">{{model.name}}</td>
+															<td class="column6">
+																<div class="btn-group">
+												                    <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle btn-sm" type="button" aria-expanded="false">Manage <span class="caret"></span>
+												                    </button>
+												                    <ul role="menu" class="dropdown-menu">
+												                      <li><a href=""  ng-click="clickEditModel(model)" data-toggle="modal" data-target="#ModalModel">Update</a>
+												                      </li>
+												                      <li><a href="">Delete</a>
+												                      </li>
+												                      
+												                    </ul>
+												               	</div>
+															</td>
+														</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+	                      </div>
+	                      
+	              	</form>
+                   
+                        
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /page content -->
+	  </div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- Modal  Brand-->
+	<div class="modal fade bd-example-modal-lg" id="ModalBrand" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content" >
+				<div class="modal-header">
+					<h3 ng-show="insertBrand">Insert Brand</h3>
+					<h3 ng-hide="insertBrand">Update Brand</h3>
+					<span class="close" data-dismiss="modal">x</span>
+
+
+				</div>
+				<div class="modal-body" >
+					<form class="form-horizontal form-label-left">
+
+						  <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
+	                        <div class="form-group">
+	                            <label class="control-label col-md-1 col-sm-1 col-xs-12" >Brand Name
+	                            </label>
+	                            <div class="col-md-10 col-sm-10 col-xs-12">
+	                              <input type="text" required="required" class="form-control col-md-7 col-xs-12" placeholder="Brand Name" ng-model="brandInsert.name" ng-show="insertBrand">
+	                              <input type="text" required="required" class="form-control col-md-7 col-xs-12" placeholder="Brand Name" ng-model="brandUpdate.name" ng-hide="insertBrand">
+	                            </div>
+	                        </div>
+	                      </div>
+	                      
+	                      
+	                      
+	                      
+                        </form>
+				</div>
+				<div class="modal-footer">
+
+					<button type="button" class="btn btn-success btn-block" ng-click="saveBrand()" class="close" data-dismiss="modal" ng-show="insertBrand">
+						<b>Submit</b>
+					</button>
+
+					<button type="button" class="btn btn-success btn-block" ng-click="editBrand()" class="close" data-dismiss="modal" ng-hide="insertBrand">
+						<b>Submit</b>
+					</button>
+
+				</div>
+			</div>
+		</div>
+	</div>
+        
+
+   
+   
+   
+   
+   
+   <!-- Modal  Model-->
+	<div class="modal fade bd-example-modal-lg" id="ModalModel" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content" >
+				<div class="modal-header">
+					<h3 ng-show="insertModel">Insert Model</h3>
+					<h3 ng-hide="insertModel">Update Model</h3>
+					<span class="close" data-dismiss="modal">x</span>
+
+
+				</div>
+				<div class="modal-body" >
+					<form class="form-horizontal form-label-left">
+
+						  <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
+	                        <div class="form-group">
+	                            <label class="control-label col-md-1 col-sm-1 col-xs-12" >Model Name
+	                            </label>
+	                            <div class="col-md-10 col-sm-10 col-xs-12">
+	                              <input type="text" required="required" class="form-control col-md-7 col-xs-12" placeholder="Model Name" ng-model="modelInsert.name" ng-show="insertModel">
+	                              <input type="text" required="required" class="form-control col-md-7 col-xs-12" placeholder="Model Name" ng-model="modelUpdate.name" ng-hide="insertModel">
+	                            </div>
+	                        </div>
+	                      </div>
+	                      
+	                      
+	                      
+	                      
+                        </form>
+				</div>
+				<div class="modal-footer">
+
+					<button type="button" class="btn btn-success btn-block" ng-click="saveModel()" class="close" data-dismiss="modal" ng-show="insertModel">
+						<b>Submit</b>
+					</button>
+
+					<button type="button" class="btn btn-success btn-block" ng-click="editModel()" class="close" data-dismiss="modal" ng-hide="insertModel">
+						<b>Submit</b>
+					</button>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	
+  </body>
+</html>

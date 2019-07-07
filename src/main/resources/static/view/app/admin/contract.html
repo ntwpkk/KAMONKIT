@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	  
+
+    
+    
+    
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+          <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h3>Contract</h3>
+              </div>
+            </div>
+            <div class="clearfix"></div>       
+
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  
+                  
+					
+	
+                  
+                  <div class="x_content">
+                    <form class="form-horizontal form-label-left input_mask">
+                       	
+	                      <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
+		                        <div class="form-group">
+			                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Contract Code</label>
+			                        <div class="col-md-8 col-sm-8 col-xs-12">
+			                          <input type="text" class="form-control" placeholder="Contract Code" ng-model="contractcode" ng-show="beforeSearch">
+			                          <input type="text" class="form-control" disabled="disabled" ng-model="contractcode" ng-hide="beforeSearch">
+			                        </div>
+			                        <a class="control-label fa fa-search col-md-1 col-sm-1 col-xs-12" href="" ng-click="getContractDataByCode()" ng-show="beforeSearch"></a>
+		                      	</div>
+		                      </div>
+		            </form>
+                    
+                    
+                    <form class="form-horizontal form-label-left input_mask">
+                        	
+		                      <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
+		                        <div class="form-group">
+			                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Code</label>
+			                        <div class="col-md-9 col-sm-9 col-xs-12">
+			                          <input type="text" class="form-control" disabled="disabled" ng-model="select.code">
+			                        </div>
+		                      	</div>
+		                      </div>
+		                      
+		                      <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
+		                        <div class="form-group">
+			                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Customer</label>
+			                        <div class="col-md-9 col-sm-9 col-xs-12">
+			                          <input type="text" class="form-control" disabled="disabled" ng-value="select.customer.fname">
+			                        </div>
+		                      	</div>
+		                      </div>
+		                      
+		                      <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
+		                        <div class="form-group">
+			                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Guarantor</label>
+			                        <div class="col-md-9 col-sm-9 col-xs-12">
+			                          <input type="text" class="form-control" disabled="disabled" ng-model="select.guarantor.fname">
+			                        </div>
+		                      	</div>
+		                      </div>
+		                      
+		                      <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
+		                        <div class="form-group">
+			                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Motorcycle</label>
+			                        <div class="col-md-9 col-sm-9 col-xs-12">
+			                          <input type="text" class="form-control" disabled="disabled" ng-model="select.motorcycle.registrationNumber">
+			                        </div>
+		                      	</div>
+		                      </div>
+		                      
+		                      <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
+		                        <div class="form-group">
+			                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Motorcycle Price</label>
+			                        <div class="col-md-9 col-sm-9 col-xs-12">
+			                          <input type="text" class="form-control" disabled="disabled" ng-model="select.motorcycle.price">
+			                        </div>
+		                      	</div>
+		                      </div>
+		                      
+		                      <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
+		                        <div class="form-group">
+			                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Down Payment</label>
+			                        <div class="col-md-9 col-sm-9 col-xs-12">
+			                          <input type="text" class="form-control" disabled="disabled" ng-model="select.downPayment">
+			                        </div>
+		                      	</div>
+		                      </div>
+		                      
+		                      <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
+		                        <div class="form-group">
+			                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Monthly Pay</label>
+			                        <div class="col-md-9 col-sm-9 col-xs-12">
+			                          <input type="text" class="form-control" disabled="disabled" ng-model="select.monthlyPay">
+			                        </div>
+		                      	</div>
+		                      </div>
+		                      
+		                      <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback">
+		                        <div class="form-group">
+			                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Number Of Installment</label>
+			                        <div class="col-md-9 col-sm-9 col-xs-12">
+			                          <input type="text" class="form-control" disabled="disabled" ng-model="select.numberofInstallment">
+			                        </div>
+		                      	</div>
+		                      </div>
+		                      
+		                      
+		                      
+		                      
+		                 </form>
+		                 
+		                 
+		                 
+		                 <div class="container-table" style="background:rgb(237,237,237);" style="overflow:visible;">
+						<div class="wrap-table" style="overflow:visible;">
+							<div class="table100" style="overflow:visible;">
+								<table style="overflow:visible;">
+									<thead>
+										<tr class="table100-head">
+											<th class="column1">Number</th>
+											<th class="column2">Date</th>
+											<th class="column3">Pay</th>
+										</tr>
+									</thead>
+									<tbody style="overflow:visible;">
+											<tr ng-repeat="i in select.installment | orderBy:'no'" 	>
+												<td class="column1">{{i.no}}</td>
+												<td class="column2">{{i.dateStr}}</td>
+												<td class="column3">{{i.pay}}</td>
+											</tr>
+											
+											
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+
+                  
+	              </div>
+	            </div>
+	          </div>
+	        </div>
+        <!-- /page content -->
+      	</div>
+      </div>
+	 </div>
+	</div>
+    
+    
+    
+    
+    
+    <!-- Modal  Insert-->
+<!-- 	<div class="modal fade bd-example-modal-lg" id="ModalUpdate" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true"> -->
+<!-- 		<div class="modal-dialog modal-lg"> -->
+<!-- 			<div class="modal-content" > -->
+<!-- 				<div class="modal-header"> -->
+<!-- 					<h3 >View Contract</h3> -->
+<!-- 					<span class="close" data-dismiss="modal">x</span> -->
+
+
+<!-- 				</div> -->
+<!-- 				<div class="modal-body" > -->
+<!-- 					<form class="form-horizontal form-label-left input_mask"> -->
+                        	
+<!-- 		                      <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback"> -->
+<!-- 		                        <div class="form-group"> -->
+<!-- 			                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Code</label> -->
+<!-- 			                        <div class="col-md-9 col-sm-9 col-xs-12"> -->
+<!-- 			                          <input type="text" class="form-control" disabled="disabled" ng-model="select.code"> -->
+<!-- 			                        </div> -->
+<!-- 		                      	</div> -->
+<!-- 		                      </div> -->
+		                      
+<!-- 		                      <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback"> -->
+<!-- 		                        <div class="form-group"> -->
+<!-- 			                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Customer</label> -->
+<!-- 			                        <div class="col-md-9 col-sm-9 col-xs-12"> -->
+<!-- 			                          <input type="text" class="form-control" disabled="disabled" ng-value="select.customer.fname"> -->
+<!-- 			                        </div> -->
+<!-- 		                      	</div> -->
+<!-- 		                      </div> -->
+		                      
+<!-- 		                      <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback"> -->
+<!-- 		                        <div class="form-group"> -->
+<!-- 			                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Grantor</label> -->
+<!-- 			                        <div class="col-md-9 col-sm-9 col-xs-12"> -->
+<!-- 			                          <input type="text" class="form-control" disabled="disabled" ng-model="select.customer.lname"> -->
+<!-- 			                        </div> -->
+<!-- 		                      	</div> -->
+<!-- 		                      </div> -->
+		                      
+<!-- 		                      <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback"> -->
+<!-- 		                        <div class="form-group"> -->
+<!-- 			                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Motorcycle</label> -->
+<!-- 			                        <div class="col-md-9 col-sm-9 col-xs-12"> -->
+<!-- 			                          <input type="text" class="form-control" disabled="disabled" ng-model="select.motor"> -->
+<!-- 			                        </div> -->
+<!-- 		                      	</div> -->
+<!-- 		                      </div> -->
+		                      
+<!-- 		                      <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback"> -->
+<!-- 		                        <div class="form-group"> -->
+<!-- 			                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Motorcycle Price</label> -->
+<!-- 			                        <div class="col-md-9 col-sm-9 col-xs-12"> -->
+<!-- 			                          <input type="text" class="form-control" disabled="disabled" ng-model="select.motorcycle.price"> -->
+<!-- 			                        </div> -->
+<!-- 		                      	</div> -->
+<!-- 		                      </div> -->
+		                      
+<!-- 		                      <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback"> -->
+<!-- 		                        <div class="form-group"> -->
+<!-- 			                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Down Payment</label> -->
+<!-- 			                        <div class="col-md-9 col-sm-9 col-xs-12"> -->
+<!-- 			                          <input type="text" class="form-control" disabled="disabled" ng-model="select.downPayment"> -->
+<!-- 			                        </div> -->
+<!-- 		                      	</div> -->
+<!-- 		                      </div> -->
+		                      
+<!-- 		                      <div class="col-md-4 col-sm-4 col-xs-12 form-group has-feedback"> -->
+<!-- 		                        <div class="form-group"> -->
+<!-- 			                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Monthly Pay</label> -->
+<!-- 			                        <div class="col-md-9 col-sm-9 col-xs-12"> -->
+<!-- 			                          <input type="text" class="form-control" disabled="disabled" ng-model="select.monthlyPay"> -->
+<!-- 			                        </div> -->
+<!-- 		                      	</div> -->
+<!-- 		                      </div> -->
+		                      
+		                      
+		                      
+		                      
+<!-- 		                 </form> -->
+		                 
+		                 
+		                 
+<!-- 		                 <div class="container-table" style="background:rgb(237,237,237);" style="overflow:visible;"> -->
+<!-- 						<div class="wrap-table" style="overflow:visible;"> -->
+<!-- 							<div class="table100" style="overflow:visible;"> -->
+<!-- 								<table style="overflow:visible;"> -->
+<!-- 									<thead> -->
+<!-- 										<tr class="table100-head"> -->
+<!-- 											<th class="column1">Number</th> -->
+<!-- 											<th class="column2">Status</th> -->
+<!-- 											<th class="column3">Customer</th> -->
+<!-- 											<th class="column4">Registration Number</th> -->
+<!-- 											<th class="column5">Contract Code</th> -->
+<!-- 											<th class="column6">Installment</th> -->
+<!-- 											<th class="column7">Manage</th> -->
+<!-- 										</tr> -->
+<!-- 									</thead> -->
+<!-- 									<tbody style="overflow:visible;"> -->
+<!-- 											<tr ng-repeat="contract in contracts 	| orderBy:sortType:sortReverse | filter:searchMotorcycle" 	> -->
+<!-- 												<td class="column1">{{$index}}</td> -->
+<!-- 												<td class="column2">{{contract.status}}</td> -->
+<!-- 												<td class="column3">{{contract.customer.name}}</td> -->
+<!-- 												<td class="column4">{{contract.motorcycle.registrationNumber}} {{contract.motorcycle.registrationProvince.name}}</td> -->
+<!-- 												<td class="column5">{{contract.code}}</td> -->
+<!-- 												<td class="column6">{{contract.monthlyPay}}</td> -->
+<!-- 												<td class="column7"> -->
+<!-- 													<div class="btn-group"> -->
+<!-- 									                    <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle btn-sm" type="button" aria-expanded="false">Manage <span class="caret"></span> -->
+<!-- 									                    </button> -->
+<!-- 									                    <ul role="menu" class="dropdown-menu"> -->
+<!-- 									                      <li><a href="" data-toggle="modal" data-target="#ModalUpdate">View</a> -->
+<!-- 									                      </li> -->
+<!-- 									                      <li><a href="">Delete</a> -->
+<!-- 									                      </li> -->
+									                      
+<!-- 									                    </ul> -->
+<!-- 									               	</div> -->
+<!-- 												</td> -->
+<!-- 											</tr> -->
+											
+											
+<!-- 									</tbody> -->
+<!-- 								</table> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+<!-- 					</div> -->
+					
+					
+					
+					
+					
+					
+<!-- 				</div> -->
+<!-- 				<div class="modal-footer"> -->
+
+<!-- 					<button type="button" class="btn btn-success btn-block" -->
+<!-- 						ng-click="insertSkill" class="close" data-dismiss="modal" -->
+<!-- 						ng-show="inputSkillShow"> -->
+<!-- 						<b>Submit</b> -->
+<!-- 					</button> -->
+
+<!-- 					<button type="button" class="btn btn-success btn-block" -->
+<!-- 						ng-click="updateSkill(skillUpdate)" class="close" -->
+<!-- 						data-dismiss="modal" ng-show="!inputSkillShow"> -->
+<!-- 						<b>Submit</b> -->
+<!-- 					</button> -->
+
+<!-- 				</div> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
+<!-- 	</div> -->
+	
+  </body>
+</html>
